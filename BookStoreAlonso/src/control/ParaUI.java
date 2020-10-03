@@ -3,7 +3,7 @@ package control;
 import View.UI;
 
 public class ParaUI extends UI {
-
+//Solo es un comentario para probar cosas raras de desarrollador
 	public ParaUI() {
 		super();
 		addListeners();
