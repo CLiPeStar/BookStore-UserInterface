@@ -5,6 +5,9 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import java.awt.Color;
 
 public class jPanelTable extends JPanel {
@@ -19,6 +22,7 @@ public class jPanelTable extends JPanel {
 
 		JScrollPane scrollPane = new JScrollPane();
 		add(scrollPane);
+
 		table = new JTable() {
 
 			@Override
@@ -27,7 +31,6 @@ public class jPanelTable extends JPanel {
 			}
 		};
 		scrollPane.setViewportView(table);
-
 	}
 
 	public JTable getTable() {

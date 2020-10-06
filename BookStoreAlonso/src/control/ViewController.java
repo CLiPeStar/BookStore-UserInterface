@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -21,27 +22,27 @@ public class ViewController {
 		this.UI = UI;
 	}
 
-	public void createBookFromFields(BookStoreController controllerBookStore) {
-		controllerBookStore.addBook(getISBN().getText(),
+	public void createBookFromFields(BookStoreController BookStore) {
+		BookStore.addBook(getISBN().getText(),
 				new Book(getISBN().getText(), getTitle().getText(), getAuthor().getText(), getEditorial().getText(),
 						Float.valueOf(getPrice().getText()), getTextBtnSelected(getFormatGroup()),
 						getTextBtnSelected(getStateGroup())));
 	}
 
-	public void fillTable(BookStoreController controllerBookStore) {
-		String nombresColumnas[] = { "TITULO", "ISBN", "AUTOR", "PRECIO" };
-		String[][] filasTabla = new String[controllerBookStore.getSize()][4];
+	public void fillTable(BookStoreController BookStore) {
+		String columName[] = { "TITULO", "ISBN", "AUTOR", "PRECIO" };
+		String[][] tableRow = new String[BookStore.getSize()][columName.length];
 		int i = 0;
 
-		for (HashMap.Entry<String, Book> entry : controllerBookStore.getHasMapBookStore().entrySet()) {
+		for (HashMap.Entry<String, Book> entry : BookStore.getBooKStore().entrySet()) {
 
-			filasTabla[i][1] = entry.getKey();
-			filasTabla[i][0] = entry.getValue().getTitle();
-			filasTabla[i][2] = entry.getValue().getAuthor();
-			filasTabla[i][3] = String.valueOf(entry.getValue().getPrice());
+			tableRow[i][1] = entry.getKey();
+			tableRow[i][0] = entry.getValue().getTitle();
+			tableRow[i][2] = entry.getValue().getAuthor();
+			tableRow[i][3] = String.valueOf(entry.getValue().getPrice());
 			i++;
 		}
-		DefaultTableModel tablaCompleta = new DefaultTableModel(filasTabla, nombresColumnas);
+		DefaultTableModel tablaCompleta = new DefaultTableModel(tableRow, columName);
 		UI.getTable().setModel(tablaCompleta);
 	}
 
@@ -72,19 +73,13 @@ public class ViewController {
 		return null;
 	}
 
-	public boolean existBook(BookStoreController controllerBookStore) {
-		return controllerBookStore.searchBook(getISBN().getText()) == null;
+	public boolean existBook(BookStoreController BookStore) {
+		return BookStore.searchBook(getISBN().getText()) == null;
 	}
 
-	public void controlStateButtons() {
-		UI.getBtnDelete().setEnabled(!UI.getBtnDelete().isEnabled());
-		UI.getBtnSearch().setEnabled(!UI.getBtnSearch().isEnabled());
-
-	}
-
-	public String getIsbnSelected(BookStoreController controllerBookStore) {
+	public String getIsbnSelected(BookStoreController BookStore) {
 		int i = 0;
-		for (HashMap.Entry<String, Book> entry : controllerBookStore.getHasMapBookStore().entrySet()) {
+		for (HashMap.Entry<String, Book> entry : BookStore.getBooKStore().entrySet()) {
 			if (UI.getTable().getSelectedRow() == i) {
 				return entry.getKey();
 			}
@@ -93,9 +88,18 @@ public class ViewController {
 		return null;
 
 	}
-	public int getRowSelectedFromTable() {
-		
-		return UI.getTable().getSelectedRow();
+
+	public void controlStateButtons(JButton btn) {
+		btn.setEnabled(!btn.isEnabled());
+
+	}
+
+	public JButton getBtnSearch() {
+		return UI.getBtnSearch();
+	}
+
+	public JButton getBtnDelete() {
+		return UI.getBtnDelete();
 	}
 
 	private JTextField getPrice() {
@@ -118,6 +122,14 @@ public class ViewController {
 		return UI.getTextISBN();
 	}
 
+	public int getRowSelectedFromTable() {
+
+		return getTable().getSelectedRow();
+	}
+
+	public JTable getTable() {
+		return UI.getTable();
+	}
 
 	private ButtonGroup getStateGroup() {
 		return UI.getStateGroup();
@@ -126,5 +138,4 @@ public class ViewController {
 	private ButtonGroup getFormatGroup() {
 		return UI.getFormatGroup();
 	}
-
 }

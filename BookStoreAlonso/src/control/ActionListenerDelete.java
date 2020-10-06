@@ -17,14 +17,13 @@ public class ActionListenerDelete implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (viewControl.getRowSelectedFromTable() != -1) {
-			bookStore.deleteBook(viewControl.getIsbnSelected(bookStore));
-			viewControl.fillTable(bookStore);
-			if (bookStore.getSize() < 1)
-				viewControl.controlStateButtons();
-			JOptionPane.showMessageDialog(null, "Book Deleted");
-
-		}
+		bookStore.deleteBook(viewControl.getIsbnSelected(bookStore));
+		viewControl.fillTable(bookStore);
+		if (bookStore.getSize() < 1)
+			viewControl.controlStateButtons(viewControl.getBtnSearch());
+		;
+		JOptionPane.showMessageDialog(null, "Book Deleted");
 
 	}
+
 }

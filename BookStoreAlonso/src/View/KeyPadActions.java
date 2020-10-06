@@ -39,13 +39,13 @@ public class KeyPadActions extends JPanel {
 		btnSave.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		btnSearch = new JButton("Search");
-		btnSearch.setEnabled(false);
 		btnSearch.setBackground(new Color(246, 142, 69));
+		btnSearch.setEnabled(false);
 		btnSearch.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		btnDelete = new JButton("Delete");
-		btnDelete.setEnabled(false);
 		btnDelete.setBackground(new Color(246, 142, 69));
+		btnDelete.setEnabled(false);
 		btnDelete.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		btnExit = new JButton("Exit");

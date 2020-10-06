@@ -1,40 +1,47 @@
 package control;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 import model.Book;
-import model.BookStore;
 
 public class BookStoreController {
 
-	private BookStore arrayBookStore = new BookStore();
+	private HashMap<String, Book> mapBookStore;
 
 	public BookStoreController() {
 		super();
-		this.arrayBookStore = arrayBookStore;
+		this.mapBookStore = new HashMap<String, Book>();
 	}
 
-	public HashMap<String, Book> getHasMapBookStore() {
-		return this.arrayBookStore.getHasBookStore();
-	}
-
-	public int getSize() {
-		return arrayBookStore.getSize();
-	}
-
-
-	public Book searchBook(String ISBN) {
-		return arrayBookStore.searchBook(ISBN);
+	public HashMap<String, Book> getHasBookStore() {
+		return mapBookStore;
 	}
 
 	public void addBook(String ISBN, Book book) {
-		arrayBookStore.addBook(ISBN, book);
-		;
+		mapBookStore.put(ISBN, book);
 	}
 
 	public void deleteBook(String ISBN) {
-		arrayBookStore.deleteBook(ISBN);
-		;
+		mapBookStore.remove(ISBN);
+	}
+
+	public Book searchBook(String ISBN) {
+		if (mapBookStore.containsKey(ISBN)) {
+			return mapBookStore.get(ISBN);
+		}
+		return null;
+	}
+
+	public HashMap<String, Book> getBooKStore() {
+		return mapBookStore;
+	}
+
+	public int getSize() {
+		return mapBookStore.size();
 	}
 
 }
