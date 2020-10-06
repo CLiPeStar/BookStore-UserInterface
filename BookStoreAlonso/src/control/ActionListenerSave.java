@@ -24,6 +24,8 @@ public class ActionListenerSave implements ActionListener {
 				viewControl.createBookFromFields(bookStore);
 				viewControl.fillTable(bookStore);
 				viewControl.emptyForm();
+				if (bookStore.getSize() > 0)
+					viewControl.controlStateButtons();
 				JOptionPane.showMessageDialog(null, "Book add correctly");
 			} else {
 				JOptionPane.showMessageDialog(null, "This ISBN already exist");

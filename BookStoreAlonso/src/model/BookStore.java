@@ -1,47 +1,50 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class BookStore {
 
-	private ArrayList<Book> arrayBookStore;
+//	private ArrayList<Book> arrayBookStore;
+	private HashMap<String, Book> mapBookStore;
 
 	public BookStore() {
 		super();
-		this.arrayBookStore = new ArrayList<Book>();
+		this.mapBookStore = new HashMap<String, Book>();
 
 	}
 
-	public ArrayList<Book> getArrayBookStore() {
-		return arrayBookStore;
+	public HashMap<String, Book> getHasBookStore() {
+		return mapBookStore;
 	}
 
-	public void addBook(Book book) {
-		arrayBookStore.add(book);
+	public void addBook(String ISBN, Book book) {
+		mapBookStore.put(ISBN, book);
 	}
 
-	public void deleteBook(int index) {
-		arrayBookStore.remove(index);
+	public void deleteBook(String ISBN) {
+		mapBookStore.remove(ISBN);
 	}
 
 	public Book searchBook(String ISBN) {
-		for (int i = 0; i < arrayBookStore.size(); i++) {
-			if (arrayBookStore.get(i).getIsbn().equals(ISBN)) {
-				return arrayBookStore.get(i);
+		for (int i = 0; i < mapBookStore.size(); i++) {
+			if (mapBookStore.get(i).getIsbn().equals(ISBN)) {
+				return mapBookStore.get(i);
 			}
 		}
 		return null;
 	}
 
-	public int getSize() {
-		return arrayBookStore.size();
+	public HashMap<String, Book> getLibreria() {
+		return mapBookStore;
 	}
 
-	public Book getBook(int index) {
-		return arrayBookStore.get(index);
+	public int getSize() {
+		return mapBookStore.size();
 	}
+	
 
 }

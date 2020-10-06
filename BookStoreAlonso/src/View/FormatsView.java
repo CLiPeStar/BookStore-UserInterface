@@ -21,7 +21,8 @@ public class FormatsView extends JPanel {
 		setBackground(new Color(250, 240, 230));
 		setForeground(new Color(250, 240, 230));
 		setFont(new Font("Tahoma", Font.PLAIN, 20));
-		setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(0, 0, 0)), "Format", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(0, 0, 0)),
+				"Format", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		setLayout(new GridLayout(1, 0, 0, 0));
 
 		JRadioButton rdbtnBoard = new JRadioButton("Board");
@@ -53,13 +54,10 @@ public class FormatsView extends JPanel {
 		formatGroup.add(rdbtnStapled);
 		formatGroup.add(rdbtnSpiral);
 
-		
-
 	}
 
 	public ButtonGroup getFormatGroup() {
 		return formatGroup;
 	}
-	
 
 }

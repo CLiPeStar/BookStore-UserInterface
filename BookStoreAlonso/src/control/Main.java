@@ -2,6 +2,7 @@ package control;
 
 import java.awt.EventQueue;
 
+import View.ParaUI;
 import View.UI;
 
 public class Main {

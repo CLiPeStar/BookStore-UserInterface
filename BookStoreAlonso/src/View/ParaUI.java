@@ -1,6 +1,10 @@
-package control;
+package View;
 
-import View.UI;
+import control.ActionListenerDelete;
+import control.ActionListenerSave;
+import control.ActionListenerSearch;
+import control.BookStoreController;
+import control.ViewController;
 
 public class ParaUI extends UI {
 
