@@ -16,11 +16,17 @@ public class jPanelTable extends JPanel {
 	public jPanelTable() {
 		setBackground(new Color(250, 240, 230));
 		setLayout(new GridLayout(1, 0, 0, 0));
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		add(scrollPane);
-		
-		table = new JTable();
+
+		table = new JTable() {
+
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
 		scrollPane.setViewportView(table);
 
 	}
@@ -28,6 +34,5 @@ public class jPanelTable extends JPanel {
 	public JTable getTable() {
 		return table;
 	}
-	
 
 }

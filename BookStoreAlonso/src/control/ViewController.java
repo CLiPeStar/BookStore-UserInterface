@@ -43,7 +43,8 @@ public class ViewController {
 	public boolean fieldValidations() {
 		return Validations.ISBNValidation(getISBN().getText()) && Validations.letterValidation(getEditorial().getText())
 				&& Validations.letterValidation(getAuthor().getText())
-				&& Validations.IsNamberFloat(getPrice().getText());
+				&& Validations.IsNamberFloat(getPrice().getText()) && getTextBtnSelected(UI.getFormatGroup()) != null
+				&& getTextBtnSelected(UI.getStateGroup()) != null;
 	}
 
 	public void emptyForm() {
@@ -52,22 +53,28 @@ public class ViewController {
 		getISBN().setText("");
 		getPrice().setText("");
 		getTitle().setText("");
+		UI.getFormatGroup().clearSelection();
+		UI.getStateGroup().clearSelection();
 	}
 
 	public String getTextBtnSelected(ButtonGroup radiousButtonGroup) {
 		for (Enumeration<AbstractButton> buttons = radiousButtonGroup.getElements(); buttons.hasMoreElements();) {
 			AbstractButton button = buttons.nextElement();
 			if (button.isSelected()) {
-				radiousButtonGroup.clearSelection();
 				return button.getText();
 			}
-			// TODO boolean para VALIDATION
 		}
 		return null;
 	}
 
 	public boolean existBook(BookStoreController controllerBookStore) {
 		return controllerBookStore.searchBook(getISBN().getText()) == null;
+	}
+
+	public void controlStateButtons() {
+		UI.getBtnDelete().setEnabled(!UI.getBtnDelete().isEnabled());
+		UI.getBtnSearch().setEnabled(!UI.getBtnSearch().isEnabled());
+
 	}
 
 	private JTextField getPrice() {
