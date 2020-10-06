@@ -4,6 +4,8 @@ import java.util.Enumeration;
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -37,8 +39,9 @@ public class ViewController {
 			rowTable[i][6] = controllerBookStore.getBook(i).getState();
 		}
 		DefaultTableModel tableComplete = new DefaultTableModel(rowTable, rowName);
-		UI.getTable().setModel(tableComplete);
+		getTable().setModel(tableComplete);
 	}
+
 
 	public boolean fieldValidations() {
 		return Validations.ISBNValidation(getISBN().getText()) && Validations.letterValidation(getEditorial().getText())
@@ -71,10 +74,17 @@ public class ViewController {
 		return controllerBookStore.searchBook(getISBN().getText()) == null;
 	}
 
-	public void controlStateButtons() {
-		UI.getBtnDelete().setEnabled(!UI.getBtnDelete().isEnabled());
-		UI.getBtnSearch().setEnabled(!UI.getBtnSearch().isEnabled());
+	public void controlStateButtons(JButton btn) {
+		btn.setEnabled(!btn.isEnabled());
 
+	}
+
+	public JButton getBtnSearch() {
+		return UI.getBtnSearch();
+	}
+
+	public JButton getBtnDelete() {
+		return UI.getBtnDelete();
 	}
 
 	private JTextField getPrice() {
@@ -99,7 +109,10 @@ public class ViewController {
 
 	public int getRowSelectedFromTable() {
 
-		return UI.getTable().getSelectedRow();
+		return getTable().getSelectedRow();
 	}
 
+	public JTable getTable() {
+		return UI.getTable();
+	}
 }

@@ -35,17 +35,21 @@ public class KeyPadActions extends JPanel {
 		setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		btnSave = new JButton("Save");
+		btnSave.setBackground(new Color(246, 142, 69));
 		btnSave.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		btnSearch = new JButton("Search");
+		btnSearch.setBackground(new Color(246, 142, 69));
 		btnSearch.setEnabled(false);
 		btnSearch.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		btnDelete = new JButton("Delete");
+		btnDelete.setBackground(new Color(246, 142, 69));
 		btnDelete.setEnabled(false);
 		btnDelete.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		btnExit = new JButton("Exit");
+		btnExit.setBackground(new Color(246, 142, 69));
 
 		btnExit.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		GroupLayout groupLayout = new GroupLayout(this);
