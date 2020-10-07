@@ -1,34 +1,49 @@
 package control;
 
+import java.util.ArrayList;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 import model.Book;
-import model.BookStore;
+
 public class BookStoreController {
-	
-	private BookStore arrayBookStore = new BookStore();
+
+	private ArrayList<Book> arrayBookStore;
 
 	public BookStoreController() {
 		super();
-		this.arrayBookStore = arrayBookStore;
-	}
-	
-	
-	
-	public int getSize() {
-		return arrayBookStore.getSize();
-	}
-	public  Book getBook(int index) {
-		return arrayBookStore.getBook(index);
-	}
-	public Book searchBook(String ISBN) {
-		return arrayBookStore.searchBook(ISBN);
-	}
-	public void addBook(Book book) {
-		arrayBookStore.addBook(book);;
-	}
-	public void deleteBook(int index) {
-		arrayBookStore.deleteBook(index);;
+		this.arrayBookStore = new ArrayList<Book>();
+
 	}
 
-	
+	public ArrayList<Book> getArrayBookStore() {
+		return arrayBookStore;
+	}
+
+	public void addBook(Book book) {
+		arrayBookStore.add(book);
+	}
+
+	public void deleteBook(int index) {
+		arrayBookStore.remove(index);
+	}
+
+	public Book searchBook(String ISBN) {
+		for (int i = 0; i < arrayBookStore.size(); i++) {
+			if (arrayBookStore.get(i).getIsbn().equals(ISBN)) {
+				return arrayBookStore.get(i);
+			}
+		}
+		return null;
+	}
+
+	public int getSize() {
+		return arrayBookStore.size();
+	}
+
+	public Book getBook(int index) {
+		return arrayBookStore.get(index);
+	}
 
 }
