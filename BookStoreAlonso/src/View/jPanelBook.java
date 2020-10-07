@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
@@ -69,6 +70,10 @@ public class jPanelBook extends JPanel {
 		panelFields.setLayout(new GridLayout(1, 0, 0, 0));
 		setLayout(groupLayout);
 
+	}
+
+	public JSpinner getSpinnerUnits() {
+		return registerFieldsPanel.spinnerUnits();
 	}
 
 	public JTextField getTextISBN() {

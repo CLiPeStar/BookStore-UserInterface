@@ -6,6 +6,7 @@ import java.util.HashMap;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -26,11 +27,11 @@ public class ViewController {
 		BookStore.addBook(getISBN().getText(),
 				new Book(getISBN().getText(), getTitle().getText(), getAuthor().getText(), getEditorial().getText(),
 						Float.valueOf(getPrice().getText()), getTextBtnSelected(getFormatGroup()),
-						getTextBtnSelected(getStateGroup())));
+						getTextBtnSelected(getStateGroup()), (int) getSpinnerUnits().getValue()));
 	}
 
 	public void fillTable(BookStoreController BookStore) {
-		String columName[] = { "TITULO", "ISBN", "AUTOR", "PRECIO" };
+		String columName[] = { "TITLE", "ISBN", "AUTHOR", "PRICE", "UNITS" };
 		String[][] tableRow = new String[BookStore.getSize()][columName.length];
 		int i = 0;
 
@@ -40,6 +41,7 @@ public class ViewController {
 			tableRow[i][0] = entry.getValue().getTitle();
 			tableRow[i][2] = entry.getValue().getAuthor();
 			tableRow[i][3] = String.valueOf(entry.getValue().getPrice());
+			tableRow[i][4] = String.valueOf(entry.getValue().getUnits());
 			i++;
 		}
 		DefaultTableModel tablaCompleta = new DefaultTableModel(tableRow, columName);
@@ -50,7 +52,7 @@ public class ViewController {
 		return Validations.ISBNValidation(getISBN().getText()) && Validations.letterValidation(getEditorial().getText())
 				&& Validations.letterValidation(getAuthor().getText())
 				&& Validations.IsNamberFloat(getPrice().getText()) && getTextBtnSelected(getFormatGroup()) != null
-				&& getTextBtnSelected(getStateGroup()) != null;
+				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerUnits().getValue() != 0;
 	}
 
 	public void emptyForm() {
@@ -59,6 +61,7 @@ public class ViewController {
 		getISBN().setText("");
 		getPrice().setText("");
 		getTitle().setText("");
+		getSpinnerUnits().setValue(0);
 		getFormatGroup().clearSelection();
 		getStateGroup().clearSelection();
 	}
@@ -137,5 +140,9 @@ public class ViewController {
 
 	private ButtonGroup getFormatGroup() {
 		return UI.getFormatGroup();
+	}
+
+	public JSpinner getSpinnerUnits() {
+		return UI.getSpinnerUnits();
 	}
 }

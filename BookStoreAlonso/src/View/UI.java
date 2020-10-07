@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.border.EmptyBorder;
 import java.awt.CardLayout;
 import javax.swing.JTabbedPane;
@@ -38,7 +39,7 @@ public class UI extends JFrame {
 	 */
 	public UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 965, 684);
+		setBounds(100, 100, 971, 778);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(246, 142, 69));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -83,6 +84,10 @@ public class UI extends JFrame {
 				dispose();
 			}
 		});
+	}
+
+	public JSpinner getSpinnerUnits() {
+		return panelBook.getSpinnerUnits();
 	}
 
 	public JButton getBtnSave() {

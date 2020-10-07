@@ -5,11 +5,12 @@ import javax.swing.JOptionPane;
 public class Book {
 	private String isbn, title, author, editorial, format, state;
 	private float price = 0f;
+	private int units;
 
-	public Book(String isbn, String title, String author, String editorial, float price, String format, String state) {
+	public Book(String isbn, String title, String author, String editorial, float price, String format, String state,
+			int units) {
 		super();
 
-		assert isbn.isEmpty() || title.isEmpty() || author.isEmpty() || editorial.isEmpty();
 		this.isbn = isbn;
 		this.title = title;
 		this.author = author;
@@ -17,7 +18,12 @@ public class Book {
 		this.price = price;
 		this.format = format;
 		this.state = state;
+		this.units = units;
 
+	}
+
+	public int getUnits() {
+		return units;
 	}
 
 	public String getIsbn() {
@@ -52,6 +58,7 @@ public class Book {
 	public String toString() {
 
 		return "ISBN : " + this.isbn + "\nTitle : " + this.title + "\nAuthor : " + this.author + "\nEditorial : "
-				+ this.editorial + "\nPrice : " + this.price + "€" + "\nFormat : " + this.format + "\nState : " + this.state;
+				+ this.editorial + "\nPrice : " + this.price + "€" + "\nFormat : " + this.format + "\nState : "
+				+ this.state + "\nUnits : " + this.units;
 	}
 }
