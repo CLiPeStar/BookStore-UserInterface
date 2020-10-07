@@ -31,7 +31,7 @@ public class ViewController {
 	}
 
 	public void fillTable(BookStoreController BookStore) {
-		String columName[] = { "TITLE", "ISBN", "AUTHOR", "PRICE", "UNITS" };
+		String columName[] = { "TITLE", "ISBN", "AUTHOR", "EDITORIAL", "FORMAT", "STATE", "PRICE", "UNITS" };
 		String[][] tableRow = new String[BookStore.getSize()][columName.length];
 		int i = 0;
 
@@ -40,8 +40,11 @@ public class ViewController {
 			tableRow[i][1] = entry.getKey();
 			tableRow[i][0] = entry.getValue().getTitle();
 			tableRow[i][2] = entry.getValue().getAuthor();
-			tableRow[i][3] = String.valueOf(entry.getValue().getPrice());
-			tableRow[i][4] = String.valueOf(entry.getValue().getUnits());
+			tableRow[i][3] = entry.getValue().getEditorial();
+			tableRow[i][4] = entry.getValue().getFormat();
+			tableRow[i][5] = entry.getValue().getState();
+			tableRow[i][6] = String.valueOf(entry.getValue().getPrice());
+			tableRow[i][7] = String.valueOf(entry.getValue().getUnits());
 			i++;
 		}
 		DefaultTableModel tablaCompleta = new DefaultTableModel(tableRow, columName);
@@ -52,7 +55,7 @@ public class ViewController {
 		return Validations.ISBNValidation(getISBN().getText()) && Validations.letterValidation(getEditorial().getText())
 				&& Validations.letterValidation(getAuthor().getText())
 				&& Validations.IsNamberFloat(getPrice().getText()) && getTextBtnSelected(getFormatGroup()) != null
-				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerUnits().getValue() != 0;
+				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerUnits().getValue() > 0;
 	}
 
 	public void emptyForm() {
@@ -94,7 +97,14 @@ public class ViewController {
 
 	public void controlStateButtons(JButton btn) {
 		btn.setEnabled(!btn.isEnabled());
+	}
 
+	public int getRowSelectedFromTable() {
+		return getTable().getSelectedRow();
+	}
+
+	public JTable getTable() {
+		return UI.getTable();
 	}
 
 	public JButton getBtnSearch() {
@@ -103,6 +113,10 @@ public class ViewController {
 
 	public JButton getBtnDelete() {
 		return UI.getBtnDelete();
+	}
+
+	public JButton getBtnAdd() {
+		return UI.getBtnAdd();
 	}
 
 	private JTextField getPrice() {
@@ -125,15 +139,6 @@ public class ViewController {
 		return UI.getTextISBN();
 	}
 
-	public int getRowSelectedFromTable() {
-
-		return getTable().getSelectedRow();
-	}
-
-	public JTable getTable() {
-		return UI.getTable();
-	}
-
 	private ButtonGroup getStateGroup() {
 		return UI.getStateGroup();
 	}
@@ -142,7 +147,8 @@ public class ViewController {
 		return UI.getFormatGroup();
 	}
 
-	public JSpinner getSpinnerUnits() {
+	private JSpinner getSpinnerUnits() {
 		return UI.getSpinnerUnits();
 	}
+
 }

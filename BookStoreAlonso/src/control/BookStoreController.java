@@ -31,7 +31,7 @@ public class BookStoreController {
 
 	public Book searchBook(String ISBN) {
 		if (mapBookStore.containsKey(ISBN)) {
-			return mapBookStore.get(ISBN);
+			return getValue(ISBN);
 		}
 		return null;
 	}
@@ -42,6 +42,27 @@ public class BookStoreController {
 
 	public int getSize() {
 		return mapBookStore.size();
+	}
+
+	public void eraseDrives(String isbnSelected, int i) {
+		getValue(isbnSelected).changeValueUnitsDelete(i);
+
+	}
+
+	public void addUnits(String isbnSelected, int i) {
+		getValue(isbnSelected).changeValueUnitsAdd(i);
+
+	}
+
+	public int checkUnits(String isbnSelected, int selection) {
+		if (getValue(isbnSelected).getUnits() <= selection) {
+			return getValue(isbnSelected).getUnits();
+		}
+		return selection;
+	}
+
+	private Book getValue(String isbnSelected) {
+		return mapBookStore.get(isbnSelected);
 	}
 
 }

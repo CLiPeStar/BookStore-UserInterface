@@ -17,9 +17,15 @@ public class ListSelectionListenerTable implements ListSelectionListener {
 	public void valueChanged(ListSelectionEvent e) {
 		if (getTable().getSelectedRowCount() > 0) {
 			getBtnDelete().setEnabled(true);
+			getBtnAdd().setEnabled(true);
 		} else {
 			getBtnDelete().setEnabled(false);
+			getBtnAdd().setEnabled(false);
 		}
+	}
+
+	private JButton getBtnAdd() {
+		return viewControl.getBtnAdd();
 	}
 
 	private JButton getBtnDelete() {

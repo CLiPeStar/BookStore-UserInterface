@@ -90,6 +90,10 @@ public class UI extends JFrame {
 		return panelBook.getSpinnerUnits();
 	}
 
+	public JButton getBtnAdd() {
+		return keyPadFooter.getBtnAdd();
+	}
+
 	public JButton getBtnSave() {
 		return keyPadFooter.getBtnSave();
 	}

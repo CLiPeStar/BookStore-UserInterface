@@ -22,6 +22,13 @@ public class Book {
 
 	}
 
+	public void changeValueUnitsDelete(int units) {
+		this.units = this.units-units;
+	}
+	public void changeValueUnitsAdd(int units) {
+		this.units = this.units+units;
+	}
+
 	public int getUnits() {
 		return units;
 	}
