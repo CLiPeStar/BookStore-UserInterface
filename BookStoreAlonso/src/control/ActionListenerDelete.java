@@ -24,22 +24,27 @@ public class ActionListenerDelete implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		String ISBN = viewControl.getIsbnRequired(bookStore);
+		if (ISBN != null) {
+			
 		int selection = DialogBookStore.optionToDelete();
 		switch (selection) {
 		case 0:
 			selection = DialogBookStore.amountToDelete();
-			selection = bookStore.checkUnits(viewControl.getIsbnSelected(bookStore),selection);
+			selection = bookStore.checkUnits(ISBN, selection);
 			if (selection > 0)
-				bookStore.eraseDrives(viewControl.getIsbnSelected(bookStore), selection);
+				bookStore.eraseDrives(ISBN, selection);
 
 			break;
 		case 1:
-			selection = DialogBookStore.deleteWarning(viewControl.getIsbnSelected(bookStore));
+			selection = DialogBookStore.deleteWarning(ISBN);
 
 			if (selection == JOptionPane.OK_OPTION) {
-				bookStore.deleteBook(viewControl.getIsbnSelected(bookStore));
+				bookStore.deleteBook(ISBN);
 				if (bookStore.getSize() < 1)
 					viewControl.controlStateButtons(viewControl.getBtnSearch());
+				viewControl.controlStateButtons(viewControl.getBtnDelete());
+				viewControl.controlStateButtons(viewControl.getBtnAdd());
 				JOptionPane.showMessageDialog(null, "Book Deleted");
 
 			}
@@ -49,6 +54,7 @@ public class ActionListenerDelete implements ActionListener {
 		}
 
 		viewControl.fillTable(bookStore);
+		}
 
 	}
 

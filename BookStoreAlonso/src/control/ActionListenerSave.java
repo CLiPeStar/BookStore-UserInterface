@@ -26,6 +26,8 @@ public class ActionListenerSave implements ActionListener {
 				viewControl.emptyForm();
 				if (bookStore.getSize() <= 1)
 					viewControl.controlStateButtons(viewControl.getBtnSearch());
+				viewControl.controlStateButtons(viewControl.getBtnAdd());
+				viewControl.controlStateButtons(viewControl.getBtnDelete());
 				;
 				JOptionPane.showMessageDialog(null, "Book add correctly");
 			} else {

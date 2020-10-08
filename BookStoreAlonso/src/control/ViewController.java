@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 import View.ParaUI;
 import model.Book;
+import tools.DialogBookStore;
 import tools.Validations;
 
 public class ViewController {
@@ -103,6 +104,23 @@ public class ViewController {
 		return getTable().getSelectedRow();
 	}
 
+	public String getIsbnRequired(BookStoreController bookStore) {
+		if (getRowSelectedFromTable() >= 0) {
+			return getIsbnSelected(bookStore);
+		}
+		try {
+			String bookSearch = DialogBookStore.inputISBN();
+			if (bookStore.searchBook(bookSearch) == null && !bookSearch.isEmpty()) {
+				DialogBookStore.errorIsbnExist();
+			}
+			if (bookStore.searchBook(bookSearch) != null) {
+				return bookSearch;
+			}
+		} catch (Exception e) {
+		}
+		return null;
+	}
+
 	public JTable getTable() {
 		return UI.getTable();
 	}
@@ -149,6 +167,11 @@ public class ViewController {
 
 	private JSpinner getSpinnerUnits() {
 		return UI.getSpinnerUnits();
+	}
+
+	public boolean validateIsbn(String text) {
+
+		return Validations.ISBNValidation(text);
 	}
 
 }

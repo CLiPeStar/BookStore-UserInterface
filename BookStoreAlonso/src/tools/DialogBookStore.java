@@ -10,11 +10,12 @@ public class DialogBookStore {
 	}
 
 	public static int deleteWarning(String ISBN) {
-		return JOptionPane.showOptionDialog(null, "Are you surre that whant delete book : " + ISBN, "Delete book",
+		return JOptionPane.showOptionDialog(null, "Are you sure you want to delete the book : " + ISBN, "Delete book",
 				JOptionPane.OK_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE, null, new Object[] { "Yes", "No" },
 				"opcion 1");
 
 	}
+
 	public static int amountToDelete() {
 		JSpinner spinner = new JSpinner();
 		JOptionPane.showOptionDialog(null, spinner, "How many units do you want to delete?",
@@ -22,11 +23,23 @@ public class DialogBookStore {
 		return (int) spinner.getValue();
 
 	}
+
 	public static int amountToAdd() {
 		JSpinner spinner = new JSpinner();
-		JOptionPane.showOptionDialog(null, spinner, "How many units do you want to add?",
-				JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+		JOptionPane.showOptionDialog(null, spinner, "How many units do you want to add?", JOptionPane.OK_CANCEL_OPTION,
+				JOptionPane.INFORMATION_MESSAGE, null, null, null);
 		return (int) spinner.getValue();
-		
+
 	}
+
+	public static String inputISBN() {
+		return JOptionPane.showInputDialog("ISBN Book");
+
+	}
+
+	public static void errorIsbnExist() {
+		JOptionPane.showMessageDialog(null, "This book don`t exist");
+
+	}
+
 }

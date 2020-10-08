@@ -5,25 +5,25 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import tools.DialogBookStore;
+
 public class ActionListenerSearch implements ActionListener {
 	private BookStoreController bookStore;
+	private ViewController viewControl;
 
-	public ActionListenerSearch(BookStoreController bookStore) {
+	public ActionListenerSearch(BookStoreController bookStore, ViewController viewControl) {
 		super();
 		this.bookStore = bookStore;
+		this.viewControl = viewControl;
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		try {
-			String bookSearch = JOptionPane.showInputDialog("ISBN Book");
-			if (bookStore.searchBook(bookSearch) == null && !bookSearch.isEmpty()) {
-				JOptionPane.showMessageDialog(null, "This book don`t exist");
-			}
-			JOptionPane.showMessageDialog(null, bookStore.searchBook(bookSearch).toString());
-		} catch (Exception e2) {
-
+		String ISBN = viewControl.getIsbnRequired(bookStore);
+		if (ISBN != null) {
+			
+		JOptionPane.showMessageDialog(null, bookStore.searchBook(ISBN).toString());
 		}
 
 	}

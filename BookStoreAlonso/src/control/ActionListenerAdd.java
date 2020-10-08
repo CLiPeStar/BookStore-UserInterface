@@ -17,10 +17,15 @@ public class ActionListenerAdd implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+
+		String ISBN = viewControl.getIsbnRequired(bookStore);
+		if (ISBN != null) {
+			
 		int unitsAdd = DialogBookStore.amountToAdd();
 		if (unitsAdd > 0)
-			bookStore.addUnits(viewControl.getIsbnSelected(bookStore), unitsAdd);
+			bookStore.addUnits(ISBN, unitsAdd);
 		viewControl.fillTable(bookStore);
+		}
 	}
 
 }
