@@ -8,10 +8,22 @@ import javax.swing.JTextField;
 
 public class KeyListenerFieldsValidations implements KeyListener {
 	private ViewController viewControl;
+	private JTextField field;
 
-	public KeyListenerFieldsValidations(ViewController viewController) {
+	public KeyListenerFieldsValidations(ViewController viewController, JTextField field) {
 		super();
+		this.field = field;
 		this.viewControl = viewController;
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		field.setForeground(Color.RED);
+		if (viewControl.validateIsbn(field.getText())) {
+			field.setForeground(Color.green);
+		}
+
+		;
 	}
 
 	@Override
@@ -24,16 +36,6 @@ public class KeyListenerFieldsValidations implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-//		viewControl.setForeground(Color.RED);
-//		if (viewControl.validateIsbn(fieldValidation.getText())) {
-//			fieldValidation.setForeground(Color.black);
-//		}
-
-		;
 	}
 
 }

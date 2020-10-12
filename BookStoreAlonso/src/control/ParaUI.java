@@ -1,17 +1,11 @@
-package View;
+package control;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JTextField;
 
-import control.ActionListenerAdd;
-import control.ActionListenerDelete;
-import control.ActionListenerSave;
-import control.ActionListenerSearch;
-import control.BookStoreController;
-import control.KeyListenerFieldsValidations;
-import control.ViewController;
+import View.UI;
 
 public class ParaUI extends UI {
 
@@ -27,6 +21,7 @@ public class ParaUI extends UI {
 		ActionListenerBtnSearch(bookStore, viewController);
 		ActionListenerBtnDelete(bookStore, viewController);
 		ActionListenerBtnAdd(bookStore, viewController);
+		KeyListenerFieldsValidations(viewController, getTextISBN());
 
 	}
 
@@ -44,6 +39,11 @@ public class ParaUI extends UI {
 
 	private void ActionListenerBtnAdd(BookStoreController bookStore, ViewController viewController) {
 		getBtnAdd().addActionListener(new ActionListenerAdd(bookStore, viewController));
+	}
+
+	private void KeyListenerFieldsValidations(ViewController viewController, JTextField textISBN) {
+		getTextISBN().addKeyListener(new KeyListenerFieldsValidations(viewController, textISBN));
+
 	}
 
 }
