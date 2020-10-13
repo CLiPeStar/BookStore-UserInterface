@@ -2,6 +2,7 @@ package control;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JTextField;
 
@@ -22,7 +23,17 @@ public class ParaUI extends UI {
 		ActionListenerBtnDelete(bookStore, viewController);
 		ActionListenerBtnAdd(bookStore, viewController);
 		KeyListenerFieldsValidations(viewController, getTextISBN());
+		ChangeListenerTabbedPanel(viewController);
+		ActionListenerBtnEdit(bookStore, viewController);
 
+	}
+
+	private void ActionListenerBtnEdit(BookStoreController bookStore, ViewController viewController) {
+		getBtnEdit().addActionListener(new ActionListenerEdit(bookStore, viewController));
+	}
+
+	private void ChangeListenerTabbedPanel(ViewController viewController) {
+		getTabbedPanels().addChangeListener(new ChangeListenerTabbedPanel(viewController));
 	}
 
 	private void ActionListenerBtnSave(BookStoreController bookStore, ViewController viewController) {

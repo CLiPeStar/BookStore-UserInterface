@@ -7,16 +7,21 @@ import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JSpinner;
+import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import View.jPanelBook;
+import View.jPanelTable;
 import model.Book;
+import model.EditionStatus;
 import tools.DialogBookStore;
 import tools.Validations;
 
 public class ViewController {
 	private ParaUI UI;
+	private EditionStatus status = EditionStatus.UNEDITED;
 
 	public ViewController(ParaUI UI) {
 		super();
@@ -58,7 +63,8 @@ public class ViewController {
 				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerUnits().getValue() > 0;
 	}
 
-	public void emptyForm() {
+	public void resetForm() {
+		getISBN().setEnabled(true);
 		getAuthor().setText("");
 		getEditorial().setText("");
 		getISBN().setText("");
@@ -67,6 +73,7 @@ public class ViewController {
 		getSpinnerUnits().setValue(0);
 		getFormatGroup().clearSelection();
 		getStateGroup().clearSelection();
+		status = EditionStatus.UNEDITED;
 	}
 
 	public String getTextBtnSelected(ButtonGroup radiousButtonGroup) {
@@ -95,6 +102,28 @@ public class ViewController {
 
 	}
 
+	public void completeForm(String iSBN, BookStoreController BookStore) {
+		Book bookCompleteForm = BookStore.getValue(iSBN);
+		getISBN().setEnabled(false);
+		getAuthor().setText(bookCompleteForm.getAuthor());
+		getEditorial().setText(bookCompleteForm.getEditorial());
+		getISBN().setText(bookCompleteForm.getIsbn());
+		getPrice().setText(String.valueOf(bookCompleteForm.getPrice()));
+		getTitle().setText(bookCompleteForm.getTitle());
+		getSpinnerUnits().setValue(bookCompleteForm.getUnits());
+		completeRadioButtonForm(getFormatGroup(), bookCompleteForm.getFormat());
+		completeRadioButtonForm(getStateGroup(), bookCompleteForm.getState());
+	}
+
+	private void completeRadioButtonForm(ButtonGroup radiousButtonGroup, String nameRadio) {
+		for (Enumeration<AbstractButton> buttons = radiousButtonGroup.getElements(); buttons.hasMoreElements();) {
+			AbstractButton button = buttons.nextElement();
+			if (button.getText() == nameRadio) {
+				button.setSelected(true);
+			}
+		}
+	}
+
 	public void controlStateButtons(JButton btn) {
 		btn.setEnabled(!btn.isEnabled());
 	}
@@ -120,12 +149,40 @@ public class ViewController {
 		return null;
 	}
 
+	public EditionStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(EditionStatus status) {
+		this.status = status;
+	}
+
+	public JTabbedPane getTabbedPanel() {
+		return UI.getTabbedPanels();
+	}
+
+	public jPanelBook getPanelBook() {
+		return UI.getPanelBook();
+	}
+
+	public jPanelTable getPanelTable() {
+		return UI.getPanelTable();
+	}
+
 	public JTable getTable() {
 		return UI.getTable();
 	}
 
+	public JButton getBtnEdit() {
+		return UI.getBtnEdit();
+	}
+
 	public JButton getBtnSearch() {
 		return UI.getBtnSearch();
+	}
+
+	public JButton getBtnSave() {
+		return UI.getBtnSave();
 	}
 
 	public JButton getBtnDelete() {
@@ -169,8 +226,12 @@ public class ViewController {
 	}
 
 	public boolean validateIsbn(String text) {
-
 		return Validations.ISBNValidation(text);
+	}
+
+	public void deleteBook(BookStoreController bookStore) {
+		bookStore.deleteBook(getISBN().getText());
+
 	}
 
 }

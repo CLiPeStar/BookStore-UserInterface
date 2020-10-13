@@ -28,6 +28,7 @@ public class KeyPadActions extends JPanel {
 	private JButton btnExit;
 	private JButton btnSearch;
 	private JButton btnAdd;
+	private JButton btnEdit;
 
 	/**
 	 * Create the panel.
@@ -59,24 +60,36 @@ public class KeyPadActions extends JPanel {
 		btnAdd.setEnabled(false);
 		btnAdd.setBackground(new Color(246, 142, 69));
 		btnAdd.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		
+		btnEdit = new JButton("Edit");
+		btnEdit.setEnabled(false);
+		btnEdit.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnEdit.setBackground(new Color(246, 142, 69));
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(1)
-					.addComponent(btnSave, GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-					.addComponent(btnSearch, GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-					.addComponent(btnDelete, GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-					.addComponent(btnAdd, GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-					.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+					.addComponent(btnSave, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+					.addGap(10)
+					.addComponent(btnSearch, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+					.addGap(10)
+					.addComponent(btnEdit, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+					.addGap(10)
+					.addComponent(btnDelete, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+					.addGap(10)
+					.addComponent(btnAdd, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+					.addGap(10)
+					.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
 					.addGap(1))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addComponent(btnSave, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-				.addComponent(btnSearch, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-				.addComponent(btnDelete, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-				.addComponent(btnAdd, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+				.addComponent(btnSave, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+				.addComponent(btnSearch, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+				.addComponent(btnEdit, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+				.addComponent(btnDelete, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+				.addComponent(btnAdd, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
 				.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
 		);
 		setLayout(groupLayout);
@@ -101,4 +114,9 @@ public class KeyPadActions extends JPanel {
 	public JButton getBtnSearch() {
 		return btnSearch;
 	}
+
+	public JButton getBtnEdit() {
+		return btnEdit;
+	}
+	
 }

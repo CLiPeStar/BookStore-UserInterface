@@ -1,29 +1,29 @@
 package View;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.AbstractButton;
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.border.EmptyBorder;
-import java.awt.CardLayout;
-import javax.swing.JTabbedPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Enumeration;
-import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class UI extends JFrame {
 
@@ -33,6 +33,7 @@ public class UI extends JFrame {
 	private jPanelTable panelTable;
 	private JPanel panel;
 	private JLabel lblTitle;
+	private JTabbedPane tabbedPanels;
 
 	/**
 	 * Create the frame.
@@ -62,7 +63,8 @@ public class UI extends JFrame {
 		lblTitle.setFont(new Font("News701 BT", Font.ITALIC, 30));
 		panel.add(lblTitle);
 
-		JTabbedPane tabbedPanels = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPanels = new JTabbedPane(JTabbedPane.TOP);
+
 		tabbedPanels.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		contentPane.add(tabbedPanels, BorderLayout.CENTER);
 
@@ -77,6 +79,7 @@ public class UI extends JFrame {
 		panelFooter.add(keyPadFooter);
 		contentPane.add(panelFooter, BorderLayout.SOUTH);
 
+		
 		getBtnExit().addActionListener(new ActionListener() {
 
 			@Override
@@ -84,6 +87,22 @@ public class UI extends JFrame {
 				dispose();
 			}
 		});
+	}
+
+	public JTabbedPane getTabbedPanels() {
+		return tabbedPanels;
+	}
+
+	public JButton getBtnEdit() {
+		return keyPadFooter.getBtnEdit();
+	}
+
+	public jPanelBook getPanelBook() {
+		return panelBook;
+	}
+
+	public jPanelTable getPanelTable() {
+		return panelTable;
 	}
 
 	public JSpinner getSpinnerUnits() {

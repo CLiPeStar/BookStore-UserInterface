@@ -61,8 +61,15 @@ public class BookStoreController {
 		return selection;
 	}
 
-	private Book getValue(String isbnSelected) {
+	public Book getValue(String isbnSelected) {
 		return mapBookStore.get(isbnSelected);
 	}
+
+	public String getInfoBook(String iSBN) {
+		
+		return searchBook(iSBN).toString();
+	}
+
+	
 
 }

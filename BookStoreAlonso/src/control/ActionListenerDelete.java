@@ -26,34 +26,34 @@ public class ActionListenerDelete implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String ISBN = viewControl.getIsbnRequired(bookStore);
 		if (ISBN != null) {
-			
-		int selection = DialogBookStore.optionToDelete();
-		switch (selection) {
-		case 0:
-			selection = DialogBookStore.amountToDelete();
-			selection = bookStore.checkUnits(ISBN, selection);
-			if (selection > 0)
-				bookStore.eraseDrives(ISBN, selection);
 
-			break;
-		case 1:
-			selection = DialogBookStore.deleteWarning(ISBN);
+			int selection = DialogBookStore.optionToDelete();
+			switch (selection) {
+			case 0:
+				selection = DialogBookStore.amountToDelete();
+				selection = bookStore.checkUnits(ISBN, selection);
+				if (selection > 0)
+					bookStore.eraseDrives(ISBN, selection);
 
-			if (selection == JOptionPane.OK_OPTION) {
-				bookStore.deleteBook(ISBN);
-				if (bookStore.getSize() < 1)
-					viewControl.controlStateButtons(viewControl.getBtnSearch());
-				viewControl.controlStateButtons(viewControl.getBtnDelete());
-				viewControl.controlStateButtons(viewControl.getBtnAdd());
+				break;
+			case 1:
+				selection = DialogBookStore.deleteWarning(ISBN);
+
+				if (selection == JOptionPane.OK_OPTION) {
+					bookStore.deleteBook(ISBN);
+					if (bookStore.getSize() < 1)
+						viewControl.controlStateButtons(viewControl.getBtnSearch());
+					viewControl.controlStateButtons(viewControl.getBtnDelete());
+					viewControl.controlStateButtons(viewControl.getBtnAdd());
+					viewControl.controlStateButtons(viewControl.getBtnEdit());
+				}
 				JOptionPane.showMessageDialog(null, "Book Deleted");
+				break;
 
+			default:
 			}
-			break;
 
-		default:
-		}
-
-		viewControl.fillTable(bookStore);
+			viewControl.fillTable(bookStore);
 		}
 
 	}

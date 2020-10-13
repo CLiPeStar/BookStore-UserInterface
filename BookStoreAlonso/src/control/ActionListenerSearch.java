@@ -22,8 +22,8 @@ public class ActionListenerSearch implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String ISBN = viewControl.getIsbnRequired(bookStore);
 		if (ISBN != null) {
-			
-		JOptionPane.showMessageDialog(null, bookStore.searchBook(ISBN).toString());
+
+			JOptionPane.showMessageDialog(null, bookStore.getInfoBook(ISBN));
 		}
 
 	}

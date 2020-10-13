@@ -3,6 +3,10 @@ package View;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
@@ -30,6 +34,7 @@ public class jPanelTable extends JPanel {
 				return false;
 			}
 		};
+		
 		scrollPane.setViewportView(table);
 	}
 
