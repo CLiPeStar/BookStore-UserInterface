@@ -4,11 +4,12 @@ import javax.swing.JOptionPane;
 
 public class Book {
 	private String isbn, title, author, editorial, format, state;
+	private Thematic thematic;
 	private float price = 0f;
 	private int units;
 
 	public Book(String isbn, String title, String author, String editorial, float price, String format, String state,
-			int units) {
+			int units, Thematic thematic) {
 		super();
 
 		this.isbn = isbn;
@@ -19,6 +20,7 @@ public class Book {
 		this.format = format;
 		this.state = state;
 		this.units = units;
+		this.thematic=thematic;
 
 	}
 
@@ -59,6 +61,11 @@ public class Book {
 
 	public String getState() {
 		return state;
+	}
+	
+
+	public Thematic getThematic() {
+		return thematic;
 	}
 
 	@Override

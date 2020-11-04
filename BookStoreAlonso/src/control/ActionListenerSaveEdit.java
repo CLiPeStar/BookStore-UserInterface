@@ -3,13 +3,13 @@ package control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
+import tools.DialogBookStore;
 
-public class ActionListenerEdit implements ActionListener {
+public class ActionListenerSaveEdit implements ActionListener {
 	private BookStoreController bookStore;
 	private ViewControllerEditSearch viewControl;
 
-	public ActionListenerEdit(BookStoreController bookStore, ViewControllerEditSearch viewController) {
+	public ActionListenerSaveEdit(BookStoreController bookStore, ViewControllerEditSearch viewController) {
 		super();
 		this.bookStore = bookStore;
 		this.viewControl = viewController;
@@ -17,6 +17,7 @@ public class ActionListenerEdit implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		viewControl.actionBtnEdit(bookStore);
+		viewControl.actionBtnEditSave(bookStore);
 	}
+
 }

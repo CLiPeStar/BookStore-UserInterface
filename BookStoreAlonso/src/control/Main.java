@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import View.UI;
 
-public class Main {
+public class Main{
 	/**
 	 * Launch the application.
 	 */
@@ -12,7 +12,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ParaUI frame = new ParaUI();
+					UI frame = new UI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

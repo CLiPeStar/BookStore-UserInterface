@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import model.Book;
-import model.EditionStatus;
+import tools.DialogBookStore;
 
 public class ActionListenerSave implements ActionListener {
 	private BookStoreController bookStore;
@@ -21,30 +21,16 @@ public class ActionListenerSave implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (viewControl.fieldValidations()) {
-			if (viewControl.existBook(bookStore) || viewControl.getStatus() == EditionStatus.EDITING) {
-				if (bookStore.getSize() <= 0) {
-					viewControl.controlStateButtons(viewControl.getBtnSearch());
-					viewControl.controlStateButtons(viewControl.getBtnAdd());
-					viewControl.controlStateButtons(viewControl.getBtnDelete());
-					viewControl.controlStateButtons(viewControl.getBtnEdit());
-				}
-				if (viewControl.getStatus() == EditionStatus.EDITING)
-					viewControl.deleteBook(bookStore);
+			if (viewControl.existBookToSave(bookStore)) {
 				viewControl.createBookFromFields(bookStore);
 				viewControl.fillTable(bookStore);
-				if (viewControl.getStatus() == EditionStatus.EDITING) {
-					
-					JOptionPane.showMessageDialog(null, "Book modified correctly");
-				} else {
-					JOptionPane.showMessageDialog(null, "Book add correctly");
-
-				}
+				DialogBookStore.SaveBook();
 				viewControl.resetForm();
 			} else {
-				JOptionPane.showMessageDialog(null, "This ISBN already exist");
+				DialogBookStore.errorIsbnExistAlready();
 			}
 		} else
-			JOptionPane.showMessageDialog(null, "Invalid fields");
+			DialogBookStore.invalidFields();
 	}
 
 }

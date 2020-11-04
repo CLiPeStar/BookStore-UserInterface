@@ -1,6 +1,7 @@
 package View;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -25,140 +26,139 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import control.ParaUI;
+
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
 public class UI extends JFrame {
 
 	private JPanel contentPane;
-	private KeyPadActions keyPadFooter;
-	private jPanelBook panelBook;
-	private jPanelTable panelTable;
-	private JPanel panel;
-	private JLabel lblTitle;
-	private JTabbedPane tabbedPanels;
+	private MainWindow main = new MainWindow();
+	private JPanel panelBookSave = main.getViewSave();
+	private JPanel panelTable = main.getViewTable();
+	private JPanel panelBookSearchEdit = main.getViewSearchEdit();
+	private JPanel panelBookChange = main.getViewChange();
 
 	/**
 	 * Create the frame.
 	 */
 	public UI() {
+		main.presentar(new ParaUI(this));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 971, 778);
+		setBounds(100, 100, 971, 797);
 		contentPane = new JPanel();
+		setResizable(false);
 		contentPane.setBackground(new Color(246, 142, 69));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setTitle("BookStore Alonso");
 		Image icon = new ImageIcon(getClass().getResource("/assets/logoGalleta.png")).getImage();
 		setIconImage(icon);
-		contentPane.setLayout(new BorderLayout(0, 0));
+		contentPane.setLayout(new CardLayout(0, 0));
 
-		JPanel headPanel = new JPanel();
-		headPanel.setBackground(new Color(255, 245, 238));
-		contentPane.add(headPanel, BorderLayout.NORTH);
-		headPanel.setLayout(new GridLayout(1, 0, 0, 0));
+		JPanel basicPanel = new JPanel();
+		basicPanel.setBackground(new Color(244, 164, 96));
 
-		panel = new JPanel();
-		panel.setBackground(new Color(255, 222, 173));
-		headPanel.add(panel);
+		contentPane.add(basicPanel);
 
-		lblTitle = new JLabel("BookStore");
-		lblTitle.setFont(new Font("News701 BT", Font.ITALIC, 30));
-		panel.add(lblTitle);
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 218, 185));
 
-		tabbedPanels = new JTabbedPane(JTabbedPane.TOP);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(UI.class.getResource("/assets/galleta.png logo.png")));
 
-		tabbedPanels.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		contentPane.add(tabbedPanels, BorderLayout.CENTER);
+		JLabel lblBookstoreAlonso = new JLabel("BookStore Alonso");
+		lblBookstoreAlonso.setFont(new Font("Tempus Sans ITC", Font.ITALIC, 40));
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+				gl_panel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel.createSequentialGroup().addGap(232)
+								.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addGap(189))
+						.addGroup(gl_panel.createSequentialGroup().addGap(307)
+								.addComponent(lblBookstoreAlonso, GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+								.addGap(319)));
+		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING,
+				gl_panel.createSequentialGroup().addContainerGap(70, Short.MAX_VALUE).addComponent(lblBookstoreAlonso)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 571, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap()));
+		panel.setLayout(gl_panel);
+		GroupLayout gl_basicPanel = new GroupLayout(basicPanel);
+		gl_basicPanel.setHorizontalGroup(gl_basicPanel.createParallelGroup(Alignment.LEADING).addComponent(panel,
+				GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+		gl_basicPanel.setVerticalGroup(gl_basicPanel.createParallelGroup(Alignment.LEADING).addComponent(panel,
+				GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+		basicPanel.setLayout(gl_basicPanel);
 
-		panelBook = new jPanelBook();
-		tabbedPanels.addTab("Book", null, panelBook, null);
-		panelTable = new jPanelTable();
-		tabbedPanels.addTab("Shelving", null, panelTable, null);
+		contentPane.add(panelTable, "PanelTable");
+		contentPane.add(panelBookSave, "PanelBook");
+		contentPane.add(panelBookSearchEdit, "PanelBookSearchEdit");
+		contentPane.add(panelBookChange, "PanelBookChange");
 
-		JPanel panelFooter = new JPanel();
-		panelFooter.setLayout(new GridLayout(0, 1, 0, 0));
-		keyPadFooter = new KeyPadActions();
-		panelFooter.add(keyPadFooter);
-		contentPane.add(panelFooter, BorderLayout.SOUTH);
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
 
-		
-		getBtnExit().addActionListener(new ActionListener() {
+		JMenu mnNewMenu = new JMenu("Acctions");
+		mnNewMenu.setFont(new Font("Segoe UI", Font.BOLD, 22));
+		menuBar.add(mnNewMenu);
 
+		JMenuItem menuBtnSave = new JMenuItem("Save Book");
+		menuBtnSave.setFont(new Font("Segoe UI", Font.BOLD, 22));
+		mnNewMenu.add(menuBtnSave);
+		menuBtnSave.addActionListener(changePanel("PanelBook"));
+
+		JMenuItem menuBtnSearchEdit = new JMenuItem("Search/Edit Book");
+		menuBtnSearchEdit.setFont(new Font("Segoe UI", Font.BOLD, 22));
+		mnNewMenu.add(menuBtnSearchEdit);
+		menuBtnSearchEdit.addActionListener(changePanel("PanelBookSearchEdit"));
+
+		JMenuItem menuBtnDeleteBook = new JMenuItem("Add/Delete Book");
+		menuBtnDeleteBook.setFont(new Font("Segoe UI", Font.BOLD, 22));
+		mnNewMenu.add(menuBtnDeleteBook);
+		menuBtnDeleteBook.addActionListener(changePanel("PanelBookChange"));
+
+		JMenuItem menuBtnLibrary = new JMenuItem("Library");
+		menuBtnLibrary.setFont(new Font("Segoe UI", Font.BOLD, 22));
+		mnNewMenu.add(menuBtnLibrary);
+		menuBtnLibrary.addActionListener(changePanel("PanelTable"));
+
+		JMenuItem menuBtnExit = new JMenuItem("EXIT");
+		menuBtnExit.setFont(new Font("Segoe UI", Font.BOLD, 22));
+		mnNewMenu.add(menuBtnExit);
+		menuBtnExit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
+
 	}
 
-	public JTabbedPane getTabbedPanels() {
-		return tabbedPanels;
+	private void asociarPanel(String string) {
+		((CardLayout) contentPane.getLayout()).show(contentPane, string);
 	}
 
-	public JButton getBtnEdit() {
-		return keyPadFooter.getBtnEdit();
-	}
+	private ActionListener changePanel(String namePanel) {
 
-	public jPanelBook getPanelBook() {
-		return panelBook;
-	}
+		ActionListener changePanel = new ActionListener() {
 
-	public jPanelTable getPanelTable() {
-		return panelTable;
-	}
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				asociarPanel(namePanel);
+				setResizable(true);
 
-	public JSpinner getSpinnerUnits() {
-		return panelBook.getSpinnerUnits();
-	}
+			}
+		};
 
-	public JButton getBtnAdd() {
-		return keyPadFooter.getBtnAdd();
-	}
+		return changePanel;
 
-	public JButton getBtnSave() {
-		return keyPadFooter.getBtnSave();
-	}
-
-	public JButton getBtnDelete() {
-		return keyPadFooter.getBtnDelete();
-	}
-
-	public JButton getBtnExit() {
-		return keyPadFooter.getBtnExit();
-	}
-
-	public JButton getBtnSearch() {
-		return keyPadFooter.getBtnSearch();
-	}
-
-	public JTextField getTextISBN() {
-		return panelBook.getTextISBN();
-	}
-
-	public JTextField getTextTitle() {
-		return panelBook.getTextTitle();
-	}
-
-	public JTextField getTextAuthor() {
-		return panelBook.getTextAuthor();
-	}
-
-	public JTextField getTextEditorial() {
-		return panelBook.getTextEditorial();
-	}
-
-	public JTextField getTextPrice() {
-		return panelBook.getTextPrice();
-	}
-
-	public ButtonGroup getFormatGroup() {
-		return panelBook.getFormatGroup();
-	}
-
-	public ButtonGroup getStateGroup() {
-		return panelBook.getStateGroup();
-	}
-
-	public JTable getTable() {
-		return panelTable.getTable();
 	}
 
 }

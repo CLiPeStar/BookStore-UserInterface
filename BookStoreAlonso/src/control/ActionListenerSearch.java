@@ -1,3 +1,4 @@
+
 package control;
 
 import java.awt.event.ActionEvent;
@@ -11,21 +12,22 @@ public class ActionListenerSearch implements ActionListener {
 	private BookStoreController bookStore;
 	private ViewController viewControl;
 
-	public ActionListenerSearch(BookStoreController bookStore, ViewController viewControl) {
+	public ActionListenerSearch(BookStoreController bookStore, ViewController viewController) {
 		super();
 		this.bookStore = bookStore;
-		this.viewControl = viewControl;
+		this.viewControl = viewController;
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String ISBN = viewControl.getIsbnRequired(bookStore);
-		if (ISBN != null) {
-
-			JOptionPane.showMessageDialog(null, bookStore.getInfoBook(ISBN));
+		if (!viewControl.existBookToSearchChange(bookStore)) {
+			viewControl.activatePanels(bookStore);
+		}else {
+			
+			viewControl.desactivatePanels();
+			DialogBookStore.errorIsbnExist();
 		}
-
 	}
 
 }

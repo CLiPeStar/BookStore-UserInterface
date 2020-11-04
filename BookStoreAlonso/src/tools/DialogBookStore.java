@@ -4,10 +4,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 
 public class DialogBookStore {
-	public static int optionToDelete() {
-		return JOptionPane.showOptionDialog(null, "Select option", "Option selector", JOptionPane.OK_CANCEL_OPTION,
-				JOptionPane.QUESTION_MESSAGE, null, new Object[] { "Erase drives", "Delete Book" }, null);
-	}
 
 	public static int deleteWarning(String ISBN) {
 		return JOptionPane.showOptionDialog(null, "Are you sure you want to delete the book : " + ISBN, "Delete book",
@@ -16,29 +12,33 @@ public class DialogBookStore {
 
 	}
 
-	public static int amountToDelete() {
-		JSpinner spinner = new JSpinner();
-		JOptionPane.showOptionDialog(null, spinner, "How many units do you want to delete?",
-				JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
-		return (int) spinner.getValue();
-
-	}
-
-	public static int amountToAdd() {
-		JSpinner spinner = new JSpinner();
-		JOptionPane.showOptionDialog(null, spinner, "How many units do you want to add?", JOptionPane.OK_CANCEL_OPTION,
-				JOptionPane.INFORMATION_MESSAGE, null, null, null);
-		return (int) spinner.getValue();
-
-	}
-
-	public static String inputISBN() {
-		return JOptionPane.showInputDialog("ISBN Book");
+	public static void errorIsbnExistAlready() {
+		JOptionPane.showMessageDialog(null, "This book already exists");
 
 	}
 
 	public static void errorIsbnExist() {
 		JOptionPane.showMessageDialog(null, "This book don`t exist");
+
+	}
+
+	public static void win() {
+		JOptionPane.showMessageDialog(null, "Action carried out successfully");
+
+	}
+
+	public static void SaveBook() {
+		JOptionPane.showMessageDialog(null, "Book saved correctly");
+
+	}
+
+	public static void invalidFields() {
+		JOptionPane.showMessageDialog(null, "Invalid fields");
+
+	}
+
+	public static void editWin() {
+		JOptionPane.showMessageDialog(null, "Edited correctly");
 
 	}
 

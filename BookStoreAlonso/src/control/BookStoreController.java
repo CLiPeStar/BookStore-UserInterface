@@ -7,6 +7,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import model.Book;
+import model.Thematic;
 
 public class BookStoreController {
 
@@ -21,8 +22,9 @@ public class BookStoreController {
 		return mapBookStore;
 	}
 
-	public void addBook(String ISBN, Book book) {
-		mapBookStore.put(ISBN, book);
+	public void addBook(String ISBN, String isbn, String title, String author, String editorial, float price,
+			String format, String state, int units, Thematic thematic) {
+		mapBookStore.put(ISBN, new Book(isbn, title, author, editorial, price, format, state, units, thematic));
 	}
 
 	public void deleteBook(String ISBN) {
@@ -66,10 +68,34 @@ public class BookStoreController {
 	}
 
 	public String getInfoBook(String iSBN) {
-		
 		return searchBook(iSBN).toString();
 	}
 
-	
+	public int getBookUnits(String iSBN) {
+		return searchBook(iSBN).getUnits();
+	}
+
+	public DefaultTableModel fillTable() {
+		String columName[] = { "TITLE", "ISBN", "AUTHOR", "EDITORIAL", "FORMAT", "STATE", "PRICE", "UNITS",
+				"Thematic" };
+		String[][] tableRow = new String[getSize()][columName.length];
+		int i = 0;
+
+		for (HashMap.Entry<String, Book> entry : getBooKStore().entrySet()) {
+
+			tableRow[i][1] = entry.getKey();
+			tableRow[i][0] = entry.getValue().getTitle();
+			tableRow[i][2] = entry.getValue().getAuthor();
+			tableRow[i][3] = entry.getValue().getEditorial();
+			tableRow[i][4] = entry.getValue().getFormat();
+			tableRow[i][5] = entry.getValue().getState();
+			tableRow[i][6] = String.valueOf(entry.getValue().getPrice());
+			tableRow[i][7] = String.valueOf(entry.getValue().getUnits());
+			tableRow[i][8] = entry.getValue().getThematic().name();
+			i++;
+		}
+		DefaultTableModel tablaCompleta = new DefaultTableModel(tableRow, columName);
+		return tablaCompleta;
+	}
 
 }

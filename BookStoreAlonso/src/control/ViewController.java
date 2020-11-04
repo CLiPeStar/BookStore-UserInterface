@@ -6,22 +6,21 @@ import java.util.HashMap;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JSpinner;
-import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import View.jPanelBook;
-import View.jPanelTable;
+import View.MainWindow;
 import model.Book;
-import model.EditionStatus;
+import model.Thematic;
 import tools.DialogBookStore;
 import tools.Validations;
 
 public class ViewController {
 	private ParaUI UI;
-	private EditionStatus status = EditionStatus.UNEDITED;
 
 	public ViewController(ParaUI UI) {
 		super();
@@ -29,51 +28,34 @@ public class ViewController {
 	}
 
 	public void createBookFromFields(BookStoreController BookStore) {
-		BookStore.addBook(getISBN().getText(),
-				new Book(getISBN().getText(), getTitle().getText(), getAuthor().getText(), getEditorial().getText(),
-						Float.valueOf(getPrice().getText()), getTextBtnSelected(getFormatGroup()),
-						getTextBtnSelected(getStateGroup()), (int) getSpinnerUnits().getValue()));
+		BookStore.addBook(getISBNSave().getText(), getISBNSave().getText(), getTitle().getText(), getAuthor().getText(),
+				getEditorial().getText(), Float.valueOf(getPrice().getText()), getTextBtnSelected(getFormatGroup()),
+				getTextBtnSelected(getStateGroup()), (int) getSpinnerUnits().getValue(),
+				(Thematic) getMain().getComboBoxThematic().getSelectedItem());
 	}
 
 	public void fillTable(BookStoreController BookStore) {
-		String columName[] = { "TITLE", "ISBN", "AUTHOR", "EDITORIAL", "FORMAT", "STATE", "PRICE", "UNITS" };
-		String[][] tableRow = new String[BookStore.getSize()][columName.length];
-		int i = 0;
-
-		for (HashMap.Entry<String, Book> entry : BookStore.getBooKStore().entrySet()) {
-
-			tableRow[i][1] = entry.getKey();
-			tableRow[i][0] = entry.getValue().getTitle();
-			tableRow[i][2] = entry.getValue().getAuthor();
-			tableRow[i][3] = entry.getValue().getEditorial();
-			tableRow[i][4] = entry.getValue().getFormat();
-			tableRow[i][5] = entry.getValue().getState();
-			tableRow[i][6] = String.valueOf(entry.getValue().getPrice());
-			tableRow[i][7] = String.valueOf(entry.getValue().getUnits());
-			i++;
-		}
-		DefaultTableModel tablaCompleta = new DefaultTableModel(tableRow, columName);
-		UI.getTable().setModel(tablaCompleta);
+		getTable().setModel(BookStore.fillTable());
 	}
 
 	public boolean fieldValidations() {
-		return Validations.ISBNValidation(getISBN().getText()) && Validations.letterValidation(getEditorial().getText())
+		return Validations.ISBNValidation(getISBNSave().getText())
+				&& Validations.letterValidation(getEditorial().getText())
 				&& Validations.letterValidation(getAuthor().getText())
 				&& Validations.IsNamberFloat(getPrice().getText()) && getTextBtnSelected(getFormatGroup()) != null
 				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerUnits().getValue() > 0;
 	}
 
 	public void resetForm() {
-		getISBN().setEnabled(true);
+		getISBNSave().setEnabled(true);
 		getAuthor().setText("");
 		getEditorial().setText("");
-		getISBN().setText("");
+		getISBNSave().setText("");
 		getPrice().setText("");
 		getTitle().setText("");
 		getSpinnerUnits().setValue(0);
 		getFormatGroup().clearSelection();
 		getStateGroup().clearSelection();
-		status = EditionStatus.UNEDITED;
 	}
 
 	public String getTextBtnSelected(ButtonGroup radiousButtonGroup) {
@@ -86,143 +68,103 @@ public class ViewController {
 		return null;
 	}
 
-	public boolean existBook(BookStoreController BookStore) {
-		return BookStore.searchBook(getISBN().getText()) == null;
+	public boolean existBookToSave(BookStoreController BookStore) {
+		return BookStore.searchBook(getISBNSave().getText()) == null;
 	}
 
-	public String getIsbnSelected(BookStoreController BookStore) {
-		int i = 0;
-		for (HashMap.Entry<String, Book> entry : BookStore.getBooKStore().entrySet()) {
-			if (UI.getTable().getSelectedRow() == i) {
-				return entry.getKey();
-			}
-			i++;
-		}
-		return null;
+	public void desactivatePanels() {
+		getMain().getLabelUnitsTotalDelete().setText("0");
+		getMain().getLabelUnitsAdd().setText("0");
+		getMain().getSpinnerAdd().setEnabled(false);
+		getMain().getSpinnerDelete().setEnabled(false);
+		getMain().getLabelTotalAdd().setText("0");
+		getMain().getLabelTotalDelete().setText("0");
+		getMain().getBtnSaveChange().setEnabled(false);
+		getISBNSearch().setText("");
 
 	}
 
-	public void completeForm(String iSBN, BookStoreController BookStore) {
-		Book bookCompleteForm = BookStore.getValue(iSBN);
-		getISBN().setEnabled(false);
-		getAuthor().setText(bookCompleteForm.getAuthor());
-		getEditorial().setText(bookCompleteForm.getEditorial());
-		getISBN().setText(bookCompleteForm.getIsbn());
-		getPrice().setText(String.valueOf(bookCompleteForm.getPrice()));
-		getTitle().setText(bookCompleteForm.getTitle());
-		getSpinnerUnits().setValue(bookCompleteForm.getUnits());
-		completeRadioButtonForm(getFormatGroup(), bookCompleteForm.getFormat());
-		completeRadioButtonForm(getStateGroup(), bookCompleteForm.getState());
+	public void actionSaveChange(BookStoreController BookStore) {
+		int add = (int) getMain().getSpinnerAdd().getValue();
+		int delete = (int) getMain().getSpinnerDelete().getValue();
+		BookStore.addUnits(getISBNSearch().getText(), add);
+		BookStore.eraseDrives(getISBNSearch().getText(), delete);
+		fillTable(BookStore);
+		DialogBookStore.win();
+		desactivatePanels();
 	}
 
-	private void completeRadioButtonForm(ButtonGroup radiousButtonGroup, String nameRadio) {
-		for (Enumeration<AbstractButton> buttons = radiousButtonGroup.getElements(); buttons.hasMoreElements();) {
-			AbstractButton button = buttons.nextElement();
-			if (button.getText() == nameRadio) {
-				button.setSelected(true);
-			}
-		}
+	public void activatePanels(BookStoreController bookStore) {
+		int units = bookStore.getBookUnits(getISBNSearch().getText());
+		getMain().getLabelUnitsTotalDelete().setText(String.valueOf(units));
+		getMain().getLabelUnitsAdd().setText(String.valueOf(units));
+		getMain().getSpinnerAdd().setEnabled(true);
+		getMain().getSpinnerDelete().setEnabled(true);
+		getMain().getLabelTotalAdd().setText(String.valueOf(units));
+		getMain().getLabelTotalDelete().setText(String.valueOf(units));
+		getMain().getBtnSaveChange().setEnabled(true);
+
+	}
+
+	public void changeUnitsTotal(BookStoreController bookStore) {
+		int units = bookStore.getBookUnits(getISBNSearch().getText());
+		int add = (int) getMain().getSpinnerAdd().getValue();
+		int delete = (int) getMain().getSpinnerDelete().getValue();
+		getMain().getLabelTotalAdd().setText(String.valueOf((units + add) - delete));
+		getMain().getLabelTotalDelete().setText(String.valueOf((units + add) - delete));
+
+	}
+
+	public boolean existBookToSearchChange(BookStoreController BookStore) {
+		return BookStore.searchBook(getISBNSearch().getText()) == null;
 	}
 
 	public void controlStateButtons(JButton btn) {
 		btn.setEnabled(!btn.isEnabled());
 	}
 
-	public int getRowSelectedFromTable() {
-		return getTable().getSelectedRow();
-	}
-
-	public String getIsbnRequired(BookStoreController bookStore) {
-		if (getRowSelectedFromTable() >= 0) {
-			return getIsbnSelected(bookStore);
-		}
-		try {
-			String bookSearch = DialogBookStore.inputISBN();
-			if (bookStore.searchBook(bookSearch) == null && !bookSearch.isEmpty()) {
-				DialogBookStore.errorIsbnExist();
-			}
-			if (bookStore.searchBook(bookSearch) != null) {
-				return bookSearch;
-			}
-		} catch (Exception e) {
-		}
-		return null;
-	}
-
-	public EditionStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(EditionStatus status) {
-		this.status = status;
-	}
-
-	public JTabbedPane getTabbedPanel() {
-		return UI.getTabbedPanels();
-	}
-
-	public jPanelBook getPanelBook() {
-		return UI.getPanelBook();
-	}
-
-	public jPanelTable getPanelTable() {
-		return UI.getPanelTable();
+	private JTextField getISBNSearch() {
+		return getMain().getTextISBNSearchAD();
 	}
 
 	public JTable getTable() {
-		return UI.getTable();
+		return getMain().getTable();
 	}
 
-	public JButton getBtnEdit() {
-		return UI.getBtnEdit();
+	public JTextField getPrice() {
+		return getMain().getTextPrice();
 	}
 
-	public JButton getBtnSearch() {
-		return UI.getBtnSearch();
-	}
-
-	public JButton getBtnSave() {
-		return UI.getBtnSave();
-	}
-
-	public JButton getBtnDelete() {
-		return UI.getBtnDelete();
-	}
-
-	public JButton getBtnAdd() {
-		return UI.getBtnAdd();
-	}
-
-	private JTextField getPrice() {
-		return UI.getTextPrice();
+	private MainWindow getMain() {
+		return UI.main;
 	}
 
 	private JTextField getTitle() {
-		return UI.getTextTitle();
+		return getMain().getTextTitle();
 	}
 
 	private JTextField getAuthor() {
-		return UI.getTextAuthor();
+		return getMain().getTextAuthor();
 	}
 
 	private JTextField getEditorial() {
-		return UI.getTextEditorial();
+		return getMain().getTextEditorial();
 	}
 
-	private JTextField getISBN() {
-		return UI.getTextISBN();
+	private JTextField getISBNSave() {
+		return getMain().getTextISBNRegister();
 	}
 
 	private ButtonGroup getStateGroup() {
-		return UI.getStateGroup();
+		return getMain().getStateGroup();
 	}
 
 	private ButtonGroup getFormatGroup() {
-		return UI.getFormatGroup();
+		return getMain().getFormatGroup();
 	}
 
-	private JSpinner getSpinnerUnits() {
-		return UI.getSpinnerUnits();
+	public JSpinner getSpinnerUnits() {
+		return getMain().getSpinnerUnits();
 	}
 
 	public boolean validateIsbn(String text) {
@@ -230,7 +172,7 @@ public class ViewController {
 	}
 
 	public void deleteBook(BookStoreController bookStore) {
-		bookStore.deleteBook(getISBN().getText());
+		bookStore.deleteBook(getISBNSave().getText());
 
 	}
 
