@@ -218,337 +218,433 @@
     </display>  
   </interface>  
   <dependency id="25">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="26">    
-    <bendpoint x="1859" y="1378"/>    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <association id="27">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="28" name="bookStore"/>      
-      <multiplicity id="29" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="30">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <dependency id="31">    
-    <end type="SOURCE" refId="21"/>    
+    <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="4"/>  
   </dependency>  
-  <association id="32">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="33" name="bookStore"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="35">    
-    <end type="SOURCE" refId="12"/>    
+  <dependency id="26">    
+    <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="23"/>  
-  </realization>  
-  <association id="36">    
+  </dependency>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <association id="28">    
     <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="37" name="viewControl"/>      
-      <multiplicity id="38" minimum="0" maximum="1"/>    
+      <attribute id="29" name="viewControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="39">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="20"/>  
+  <dependency id="31">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="4"/>  
   </dependency>  
-  <association id="40">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="41" name="bookStore"/>      
-      <multiplicity id="42" minimum="0" maximum="1"/>    
+  <association id="32">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="33" name="bookStore">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="34" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="43">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="44" name="bookStore"/>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
+  <association id="35">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="36" name="viewControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="37" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
+    <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="47" name="formats"/>      
-      <multiplicity id="48" minimum="0" maximum="1"/>    
+  <association id="38">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="39" name="viewControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="40" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="42" name="formatSection">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="43" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="49">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="24"/>  
-  </realization>  
-  <association id="50">    
-    <bendpoint x="706" y="2310"/>    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="51" name="state"/>      
-      <multiplicity id="52" minimum="0" maximum="1"/>    
+  <association id="44">    
+    <bendpoint x="738" y="2294"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="45" name="stateSection">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="46" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="53">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="54" name="register"/>      
-      <multiplicity id="55" minimum="0" maximum="1"/>    
+  <association id="47">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="48" name="bookStore">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="50">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="24"/>  
+  </realization>  
+  <association id="51">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="52" name="registerFieldsPanel">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="53" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="56">    
-    <bendpoint x="1612" y="1400"/>    
+  <realization id="54">    
     <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <association id="57">    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <association id="55">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="58" name="panelBook"/>      
-      <multiplicity id="59" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="60">    
-    <bendpoint x="738" y="2294"/>    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="61" name="stateSection"/>      
-      <multiplicity id="62" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="63">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="64" name="viewControl"/>      
-      <multiplicity id="65" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="66">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="67">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <association id="68">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="69" name="viewControl"/>      
-      <multiplicity id="70" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="71">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="72" name="viewControl"/>      
-      <multiplicity id="73" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="74">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="75" name="panelTable"/>      
-      <multiplicity id="76" minimum="0" maximum="1"/>    
+      <attribute id="56" name="panelTable">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="57" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="77">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <association id="78">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="79" name="searchEditPanel"/>      
-      <multiplicity id="80" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="81">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="23"/>  
-  </dependency>  
-  <association id="82">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="83" name="UI"/>      
-      <multiplicity id="84" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="85">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="86">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <association id="87">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="88" name="mapBookStore"/>      
-      <multiplicity id="89" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="90">    
+  <dependency id="58">    
     <bendpoint x="1620" y="1384"/>    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="11"/>  
   </dependency>  
-  <association id="91">    
+  <association id="59">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="60" name="panelBook">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="61" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="63" name="bookStore">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="64" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="65">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="66" name="UI">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="67" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="68">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <association id="69">    
     <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="92" name="main"/>      
-      <multiplicity id="93" minimum="0" maximum="1"/>    
+      <attribute id="70" name="main">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="94">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="95" name="bookStore"/>      
-      <multiplicity id="96" minimum="0" maximum="1"/>    
+  <association id="72">    
+    <bendpoint x="706" y="2310"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="73" name="state">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="74" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="97">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="98" name="bookStore"/>      
-      <multiplicity id="99" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="100">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="101" name="viewControl"/>      
-      <multiplicity id="102" minimum="0" maximum="1"/>    
+  <dependency id="75">    
+    <bendpoint x="1604" y="1404"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <dependency id="76">    
+    <bendpoint x="1859" y="1378"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <association id="77">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="78" name="viewControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="79" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="103">    
+  <association id="80">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="81" name="register">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="82" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="83">    
     <bendpoint x="1612" y="1401"/>    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="18"/>  
   </dependency>  
-  <dependency id="104">    
+  <association id="84">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="85" name="panelChange">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="86" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="87">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="88" name="UI">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="89" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="90">    
+    <bendpoint x="1612" y="1400"/>    
     <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="21"/>  
+    <end type="TARGET" refId="13"/>  
   </dependency>  
-  <dependency id="105">    
-    <end type="SOURCE" refId="23"/>    
+  <association id="91">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="92" name="searchEditPanel">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="93" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="95" name="viewControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="96" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="98" name="mapBookStore">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="99" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="100">    
+    <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="24"/>  
   </dependency>  
-  <dependency id="106">    
-    <bendpoint x="1600" y="1388"/>    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
+  <association id="101">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="102" name="bookStore">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="103" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="104">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="105" name="formats">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="106" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <dependency id="107">    
     <bendpoint x="1618" y="1391"/>    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="15"/>  
   </dependency>  
-  <association id="108">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="109" name="formatSection"/>      
-      <multiplicity id="110" minimum="0" maximum="1"/>    
+  <dependency id="108">    
+    <bendpoint x="1608" y="1404"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <association id="109">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="110" name="viewControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="111" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="111">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="112" name="panelChange"/>      
-      <multiplicity id="113" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
+  <dependency id="112">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="113">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
   <dependency id="114">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="23"/>  
   </dependency>  
   <dependency id="115">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="116">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="117" name="bookStore">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="118" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="119">    
     <bendpoint x="1958" y="1704"/>    
     <bendpoint x="2222" y="1699"/>    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="17"/>  
   </dependency>  
-  <dependency id="116">    
-    <bendpoint x="1608" y="1404"/>    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="19"/>  
-  </dependency>  
-  <association id="117">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="118" name="UI"/>      
-      <multiplicity id="119" minimum="0" maximum="1"/>    
+  <association id="120">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="121" name="bookStore">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="122" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="120">    
+  <dependency id="123">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="12"/>  
   </dependency>  
-  <association id="121">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="122" name="registerFieldsPanel"/>      
-      <multiplicity id="123" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="124">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="125" name="viewControl"/>      
-      <multiplicity id="126" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="127">    
-    <bendpoint x="1604" y="1404"/>    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="14"/>  
+  <dependency id="124">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="4"/>  
   </dependency>  
-  <dependency id="128">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <association id="129">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="130" name="viewControl"/>      
-      <multiplicity id="131" minimum="0" maximum="1"/>    
+  <association id="125">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="126" name="viewControl">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="127" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <dependency id="128">    
+    <bendpoint x="1600" y="1388"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
