@@ -40,7 +40,7 @@ public class ParaUI implements IparaUI {
 		ActionListenerBtnSearchChange(bookStore, viewController);
 		KeyListenerFieldsValidations(viewController, main.getTextISBNRegister());
 		KeyListenerFieldsValidations(viewController, main.getTextISBNSearchAD());
-		KeyListenerFieldsValidations(viewController, main.getPanelRegsiterSearchEdit().getTextISBN());
+		KeyListenerFieldsValidations(viewController, main.getTextISBNRegister());
 		ChangeListenerSpinner(bookStore, viewController, main.getSpinnerAdd());
 		ChangeListenerSpinner(bookStore, viewController, main.getSpinnerDelete());
 		ActionListenerBtnSaveChange(bookStore, viewController);

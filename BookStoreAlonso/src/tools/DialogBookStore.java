@@ -19,7 +19,11 @@ public class DialogBookStore {
 
 	public static void errorIsbnExist() {
 		JOptionPane.showMessageDialog(null, "This book don`t exist");
-
+	}
+	
+	public static void errorField(String field) {
+		JOptionPane.showMessageDialog(null, "Failure in "+field);
+		
 	}
 
 	public static void win() {

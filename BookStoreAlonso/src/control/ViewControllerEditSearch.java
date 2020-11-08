@@ -36,9 +36,9 @@ public class ViewControllerEditSearch {
 	}
 
 	public boolean fieldValidations() {
-		return Validations.letterValidation(getEditorialEdit().getText())
-				&& Validations.letterValidation(getAuthorEdit().getText())
-				&& Validations.IsNamberFloat(getPriceEdit().getText()) && getTextBtnSelected(getFormatgroup()) != null
+		return Validations.letterValidation(getEditorialEdit().getText(),"Editorial")
+				&& Validations.letterValidation(getAuthorEdit().getText(),"Author")
+				&& Validations.IsNamberFloat(getPriceEdit().getText(),"Price") && getTextBtnSelected(getFormatgroup()) != null
 				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerEdit().getValue() > 0;
 	}
 

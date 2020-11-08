@@ -1,99 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="View.UI" project="BookStoreAlonso" file="/BookStoreAlonso/src/View/UI.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="197" x="3277" y="176"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="View.StateView" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/View/StateView.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="168" x="1579" y="2828"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="View.RegistrationFieldsView" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/View/RegistrationFieldsView.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="351" width="204" x="1335" y="2828"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="View.jPanelTable" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/View/jPanelTable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="107" x="3110" y="2329"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="View.jPanelBook" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/View/jPanelBook.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="315" width="204" x="1354" y="2329"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="View.FormatsView" project="BookStoreAlonso" 
+  <class id="1" language="java" name="View.FormatsView" project="BookStoreAlonso" 
     file="/BookStoreAlonso/src/View/FormatsView.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="176" x="1119" y="2828"/>    
+    <position height="-1" width="-1" x="352" y="2579"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="model.Book" project="BookStoreAlonso" file="/BookStoreAlonso/src/model/Book.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="459" width="325" x="947" y="2329"/>    
+  <class id="2" language="java" name="View.jPanelBook" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/View/jPanelBook.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="184" y="2116"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="control.BookStoreController" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/control/BookStoreController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="315" width="397" x="854" y="1524"/>    
+  <class id="3" language="java" name="View.jPanelTable" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/View/jPanelTable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="667" y="2079"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="tools.Validations" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/tools/Validations.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1851" y="1275"/>    
+  <class id="4" language="java" name="View.MainWindow" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/View/MainWindow.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="490" y="1396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="control.Main" project="BookStoreAlonso" 
+  <class id="5" language="java" name="View.PanelAddDelete" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/View/PanelAddDelete.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="859" y="2151"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="View.PanelSearchEdit" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/View/PanelSearchEdit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="453" y="2059"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="View.RegistrationFieldsView" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/View/RegistrationFieldsView.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="563" y="2524"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="View.StateView" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/View/StateView.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="799" y="2589"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="control.Main" project="BookStoreAlonso" 
     file="/BookStoreAlonso/src/control/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="3277" y="37"/>    
+    <position height="-1" width="-1" x="436" y="633"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="tools.DialogBookStore" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/tools/DialogBookStore.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2071" y="1293"/>    
+  <class id="10" language="java" name="View.UI" project="BookStoreAlonso" file="/BookStoreAlonso/src/View/UI.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="506" y="835"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="control.ActionListenerEdit" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/control/ActionListenerEdit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2082" y="979"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,61 +102,61 @@
   </class>  
   <class id="12" language="java" name="control.ParaUI" project="BookStoreAlonso" 
     file="/BookStoreAlonso/src/control/ParaUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="279" width="417" x="3015" y="441"/>    
+    <position height="-1" width="-1" x="966" y="1377"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="control.ViewController" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/control/ViewController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="531" width="301" x="2422" y="953"/>    
+  <class id="13" language="java" name="control.ActionListenerSaveChange" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/control/ActionListenerSaveChange.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2105" y="1921"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="View.MainWindow" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/View/MainWindow.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="765" width="281" x="3110" y="1524"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <interface id="15" language="java" name="model.IparaUI" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/model/IparaUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="116" x="2933" y="2329"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <interface id="16" language="java" name="model.Iview" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/model/Iview.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3011" y="2598"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="17" language="java" name="control.ActionListenerSave" project="BookStoreAlonso" 
+  <class id="14" language="java" name="control.ActionListenerSave" project="BookStoreAlonso" 
     file="/BookStoreAlonso/src/control/ActionListenerSave.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="299" x="1293" y="760"/>    
+    <position height="-1" width="-1" x="2080" y="1619"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="control.ActionListenerSearch" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/control/ActionListenerSearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="309" x="2008" y="760"/>    
+  <class id="15" language="java" name="control.ActionListenerSaveEdit" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/control/ActionListenerSaveEdit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2092" y="1290"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="control.ActionListenerSearchEdit" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/control/ActionListenerSearchEdit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2096" y="1117"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="control.BookStoreController" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/control/BookStoreController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2742" y="1439"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="control.ChangeListenerSpinner" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/control/ChangeListenerSpinner.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2090" y="1797"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,563 +165,388 @@
   </class>  
   <class id="19" language="java" name="control.KeyListenerFieldsValidations" project="BookStoreAlonso" 
     file="/BookStoreAlonso/src/control/KeyListenerFieldsValidations.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="293" x="2714" y="760"/>    
+    <position height="-1" width="-1" x="2094" y="2088"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="View.PanelAddDelete" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/View/PanelAddDelete.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="405" width="196" x="3257" y="2329"/>    
+  <class id="20" language="java" name="control.ViewController" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/control/ViewController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1442" y="1687"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="control.ChangeListenerSpinner" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/control/ChangeListenerSpinner.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="317" x="2357" y="760"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="22" language="java" name="control.ActionListenerEdit" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/control/ActionListenerEdit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="343" x="471" y="760"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="control.ActionListenerSaveChange" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/control/ActionListenerSaveChange.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="336" x="1632" y="760"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="24" language="java" name="control.ActionListenerSaveEdit" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/control/ActionListenerSaveEdit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="368" x="63" y="760"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="25" language="java" name="control.ActionListenerSearchEdit" project="BookStoreAlonso" 
-    file="/BookStoreAlonso/src/control/ActionListenerSearchEdit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="378" x="854" y="760"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="26" language="java" name="control.ViewControllerEditSearch" project="BookStoreAlonso" 
+  <class id="21" language="java" name="control.ViewControllerEditSearch" project="BookStoreAlonso" 
     file="/BookStoreAlonso/src/control/ViewControllerEditSearch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="531" width="281" x="1293" y="953"/>    
+    <position height="-1" width="-1" x="1439" y="1117"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="27">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="15"/>  
+  <class id="22" language="java" name="model.Book" project="BookStoreAlonso" file="/BookStoreAlonso/src/model/Book.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3378" y="1430"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="23" language="java" name="model.IparaUI" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/model/IparaUI.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1084" y="1717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="24" language="java" name="model.Iview" project="BookStoreAlonso" 
+    file="/BookStoreAlonso/src/model/Iview.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="847" y="1752"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <dependency id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
   </dependency>  
-  <dependency id="28">    
-    <bendpoint x="1993" y="1121"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="9"/>  
+  <dependency id="26">    
+    <bendpoint x="1859" y="1378"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
   </dependency>  
-  <dependency id="29">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <association id="30">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="31" name="mapBookStore">        
-        <position height="0" width="0" x="-218" y="5"/>      
-      </attribute>      
-      <multiplicity id="32" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="-218" y="5"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="33">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="34">    
-    <bendpoint x="1323" y="1524"/>    
-    <bendpoint x="1323" y="2329"/>    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <dependency id="35">    
-    <bendpoint x="2017" y="953"/>    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="11"/>  
-  </dependency>  
-  <realization id="36">    
-    <bendpoint x="3079" y="760"/>    
-    <bendpoint x="3079" y="953"/>    
-    <bendpoint x="3079" y="1524"/>    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="15"/>  
-  </realization>  
-  <association id="37">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="38" name="viewControl">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="39" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="40">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="41" name="viewControl">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="42" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="43">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="44" name="viewControl">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="45" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="46">    
-    <bendpoint x="3100" y="760"/>    
-    <bendpoint x="3100" y="953"/>    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="14"/>  
-  </dependency>  
-  <association id="47">    
-    <bendpoint x="1262" y="953"/>    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="48" name="bookStore">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="49" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="50">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="51" name="viewControl">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="52" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="53">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <dependency id="54">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <association id="55">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="56" name="formats">        
-        <position height="0" width="0" x="-1643" y="61"/>      
-      </attribute>      
-      <multiplicity id="57" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-1643" y="61"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="58">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="59" name="state">        
-        <position height="0" width="0" x="-1676" y="107"/>      
-      </attribute>      
-      <multiplicity id="60" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-1676" y="107"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="61">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="62" name="registerFieldsPanel">        
-        <position height="0" width="0" x="-1799" y="-97"/>      
-      </attribute>      
-      <multiplicity id="63" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-1799" y="-97"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="64">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="65" name="panelTable">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="66" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="67">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <dependency id="68">    
-    <bendpoint x="3441" y="760"/>    
-    <bendpoint x="3483" y="953"/>    
-    <bendpoint x="3483" y="1524"/>    
-    <bendpoint x="3483" y="2329"/>    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <dependency id="69">    
-    <bendpoint x="1588" y="1524"/>    
-    <bendpoint x="1588" y="2329"/>    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <association id="70">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="71" name="viewControl">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="72" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="73">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="14"/>  
-  </dependency>  
-  <association id="74">    
-    <bendpoint x="1241" y="953"/>    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="75" name="bookStore">        
-        <position height="0" width="0" x="-94" y="25"/>      
-      </attribute>      
-      <multiplicity id="76" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-94" y="25"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="77">    
-    <bendpoint x="3037" y="760"/>    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <dependency id="78">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="21"/>  
-  </dependency>  
-  <dependency id="79">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="80">    
-    <bendpoint x="1302" y="1524"/>    
-    <bendpoint x="1302" y="2329"/>    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="81">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="82">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="23"/>  
-  </dependency>  
-  <association id="83">    
-    <bendpoint x="1083" y="953"/>    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="84" name="bookStore">        
-        <position height="0" width="0" x="-94" y="25"/>      
-      </attribute>      
-      <multiplicity id="85" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-94" y="25"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="86">    
-    <bendpoint x="3058" y="760"/>    
+  <association id="27">    
     <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="87" name="UI">        
-        <position height="0" width="0" x="-314" y="-207"/>      
-      </attribute>      
-      <multiplicity id="88" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-314" y="-207"/>      
-      </multiplicity>    
+      <attribute id="28" name="bookStore"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="89">    
+  <dependency id="30">    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="17"/>  
   </dependency>  
-  <association id="90">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="91" name="panelChange">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="92" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <dependency id="31">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="32">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="33" name="bookStore"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="35">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <association id="36">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="37" name="viewControl"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="93">    
+  <dependency id="39">    
     <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="22"/>  
+    <end type="TARGET" refId="20"/>  
   </dependency>  
-  <dependency id="94">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="11"/>  
-  </dependency>  
-  <dependency id="95">    
-    <bendpoint x="2069" y="1513"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="96">    
-    <bendpoint x="1801" y="1073"/>    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="11"/>  
-  </dependency>  
-  <association id="97">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="98" name="viewControl">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="99" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="40">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="41" name="bookStore"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
+    <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="100">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="101" name="main">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="102" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="43">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="44" name="bookStore"/>      
+      <multiplicity id="45" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
+    <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="103">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="19"/>  
-  </dependency>  
-  <association id="104">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="105" name="viewControl">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="106" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="46">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="47" name="formats"/>      
+      <multiplicity id="48" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="107">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="18"/>  
-  </dependency>  
-  <association id="108">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="109" name="viewControl">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="110" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="111">    
-    <bendpoint x="863" y="953"/>    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="112" name="bookStore">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="113" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="114">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="25"/>  
-  </dependency>  
-  <realization id="115">    
-    <bendpoint x="3079" y="2329"/>    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="16"/>  
+  <realization id="49">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="24"/>  
   </realization>  
-  <association id="116">    
-    <bendpoint x="3121" y="760"/>    
-    <bendpoint x="3121" y="953"/>    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="117" name="main">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="118" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="119">    
-    <bendpoint x="3462" y="441"/>    
-    <bendpoint x="3462" y="760"/>    
-    <bendpoint x="3462" y="953"/>    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="14"/>  
-  </dependency>  
-  <association id="120">    
-    <bendpoint x="671" y="953"/>    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="121" name="bookStore">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="122" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="50">    
+    <bendpoint x="706" y="2310"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="51" name="state"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="123">    
-    <end type="SOURCE" refId="10"/>    
+  <association id="53">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="54" name="register"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="56">    
+    <bendpoint x="1612" y="1400"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="57">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="58" name="panelBook"/>      
+      <multiplicity id="59" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <bendpoint x="738" y="2294"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="61" name="stateSection"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="64" name="viewControl"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="66">    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="1"/>  
   </dependency>  
-  <dependency id="124">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="14"/>  
+  <dependency id="67">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="24"/>  
   </dependency>  
-  <association id="125">    
-    <bendpoint x="1262" y="760"/>    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="126" name="UI">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="127" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="68">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="69" name="viewControl"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="71">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="72" name="viewControl"/>      
+      <multiplicity id="73" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="74">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="75" name="panelTable"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="77">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="78">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="79" name="searchEditPanel"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="81">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <association id="82">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="83" name="UI"/>      
+      <multiplicity id="84" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="128">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="9"/>  
-  </dependency>  
-  <dependency id="129">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <dependency id="130">    
-    <bendpoint x="32" y="760"/>    
-    <bendpoint x="32" y="953"/>    
-    <end type="SOURCE" refId="12"/>    
+  <dependency id="85">    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
-  <association id="131">    
+  <dependency id="86">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="87">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="88" name="mapBookStore"/>      
+      <multiplicity id="89" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="90">    
+    <bendpoint x="1620" y="1384"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <association id="91">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="92" name="main"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
     <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="132" name="panelBook">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="133" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+      <attribute id="95" name="bookStore"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="98" name="bookStore"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="100">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="101" name="viewControl"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="103">    
+    <bendpoint x="1612" y="1401"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="104">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="105">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="106">    
+    <bendpoint x="1600" y="1388"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="107">    
+    <bendpoint x="1618" y="1391"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="108">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="109" name="formatSection"/>      
+      <multiplicity id="110" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="111">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="112" name="panelChange"/>      
+      <multiplicity id="113" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="134">    
-    <bendpoint x="467" y="953"/>    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="135" name="bookStore">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="136" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <dependency id="114">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="115">    
+    <bendpoint x="1958" y="1704"/>    
+    <bendpoint x="2222" y="1699"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="116">    
+    <bendpoint x="1608" y="1404"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <association id="117">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="118" name="UI"/>      
+      <multiplicity id="119" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="137">    
-    <bendpoint x="1220" y="953"/>    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="138" name="bookStore">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="139" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <dependency id="120">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <association id="121">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="122" name="registerFieldsPanel"/>      
+      <multiplicity id="123" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="124">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="125" name="viewControl"/>      
+      <multiplicity id="126" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="127">    
+    <bendpoint x="1604" y="1404"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <dependency id="128">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="129">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="130" name="viewControl"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

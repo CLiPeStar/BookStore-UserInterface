@@ -29,8 +29,6 @@ public class ActionListenerSave implements ActionListener {
 			} else {
 				DialogBookStore.errorIsbnExistAlready();
 			}
-		} else
-			DialogBookStore.invalidFields();
+		}
 	}
-
 }

@@ -40,9 +40,9 @@ public class ViewController {
 
 	public boolean fieldValidations() {
 		return Validations.ISBNValidation(getISBNSave().getText())
-				&& Validations.letterValidation(getEditorial().getText())
-				&& Validations.letterValidation(getAuthor().getText())
-				&& Validations.IsNamberFloat(getPrice().getText()) && getTextBtnSelected(getFormatGroup()) != null
+				&& Validations.letterValidation(getEditorial().getText(),"Editorial")
+				&& Validations.letterValidation(getAuthor().getText(),"Author")
+				&& Validations.IsNamberFloat(getPrice().getText(),"Price") && getTextBtnSelected(getFormatGroup()) != null
 				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerUnits().getValue() > 0;
 	}
 

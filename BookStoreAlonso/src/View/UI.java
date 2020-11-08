@@ -38,17 +38,16 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 public class UI extends JFrame {
 
 	private JPanel contentPane;
-	private MainWindow main = new MainWindow();
-	private JPanel panelBookSave = main.getViewSave();
-	private JPanel panelTable = main.getViewTable();
-	private JPanel panelBookSearchEdit = main.getViewSearchEdit();
-	private JPanel panelBookChange = main.getViewChange();
+//	private JPanel panelBookSave;
+//	private JPanel panelTable;
+//	private JPanel panelBookSearchEdit;
+//	private JPanel panelBookChange;
 
 	/**
 	 * Create the frame.
 	 */
 	public UI() {
-		main.presentar(new ParaUI(this));
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 971, 797);
 		contentPane = new JPanel();
@@ -96,11 +95,7 @@ public class UI extends JFrame {
 		gl_basicPanel.setVerticalGroup(gl_basicPanel.createParallelGroup(Alignment.LEADING).addComponent(panel,
 				GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 		basicPanel.setLayout(gl_basicPanel);
-
-		contentPane.add(panelTable, "PanelTable");
-		contentPane.add(panelBookSave, "PanelBook");
-		contentPane.add(panelBookSearchEdit, "PanelBookSearchEdit");
-		contentPane.add(panelBookChange, "PanelBookChange");
+//		
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -138,7 +133,12 @@ public class UI extends JFrame {
 				dispose();
 			}
 		});
-
+		MainWindow main = new MainWindow();
+		contentPane.add(main.getViewTable(), "PanelTable");
+		contentPane.add(main.getViewSave(), "PanelBook");
+		contentPane.add(main.getViewSearchEdit(), "PanelBookSearchEdit");
+		contentPane.add(main.getViewChange(), "PanelBookChange");
+		main.presentar(new ParaUI(this));
 	}
 
 	private void asociarPanel(String string) {
