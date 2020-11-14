@@ -13,7 +13,6 @@ public class Validations {
 	}
 
 	public static boolean ISBNValidation(String name) {
-
 		return Pattern.matches("\\d{13}", name);
 
 	}

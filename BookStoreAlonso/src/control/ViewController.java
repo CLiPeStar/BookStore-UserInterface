@@ -29,8 +29,8 @@ public class ViewController {
 
 	public void createBookFromFields(BookStoreController BookStore) {
 		BookStore.addBook(getISBNSave().getText(), getISBNSave().getText(), getTitle().getText(), getAuthor().getText(),
-				getEditorial().getText(), Float.valueOf(getPrice().getText()), getTextBtnSelected(getFormatGroup()),
-				getTextBtnSelected(getStateGroup()), (int) getSpinnerUnits().getValue(),
+				getEditorial().getText(), Float.valueOf(getPrice().getText()), getTextBtnSelected(getFormatGroup(),"Format"),
+				getTextBtnSelected(getStateGroup(),"State"), (int) getSpinnerUnits().getValue(),
 				(Thematic) getMain().getComboBoxThematic().getSelectedItem());
 	}
 
@@ -40,10 +40,11 @@ public class ViewController {
 
 	public boolean fieldValidations() {
 		return Validations.ISBNValidation(getISBNSave().getText())
-				&& Validations.letterValidation(getEditorial().getText(),"Editorial")
-				&& Validations.letterValidation(getAuthor().getText(),"Author")
-				&& Validations.IsNamberFloat(getPrice().getText(),"Price") && getTextBtnSelected(getFormatGroup()) != null
-				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerUnits().getValue() > 0;
+				&& Validations.letterValidation(getEditorial().getText(), "Editorial")
+				&& Validations.letterValidation(getAuthor().getText(), "Author")
+				&& Validations.IsNamberFloat(getPrice().getText(), "Price")
+				&& getTextBtnSelected(getFormatGroup(),"Format") != null && getTextBtnSelected(getStateGroup(),"State") != null
+				&& (int) getSpinnerUnits().getValue() > 0;
 	}
 
 	public void resetForm() {
@@ -58,13 +59,14 @@ public class ViewController {
 		getStateGroup().clearSelection();
 	}
 
-	public String getTextBtnSelected(ButtonGroup radiousButtonGroup) {
+	public String getTextBtnSelected(ButtonGroup radiousButtonGroup,String field) {
 		for (Enumeration<AbstractButton> buttons = radiousButtonGroup.getElements(); buttons.hasMoreElements();) {
 			AbstractButton button = buttons.nextElement();
 			if (button.isSelected()) {
 				return button.getText();
 			}
 		}
+		DialogBookStore.errorField(field);
 		return null;
 	}
 
@@ -76,12 +78,15 @@ public class ViewController {
 		getMain().getLabelUnitsTotalDelete().setText("0");
 		getMain().getLabelUnitsAdd().setText("0");
 		getMain().getSpinnerAdd().setEnabled(false);
+		getMain().getSpinnerAdd().setValue(0);
 		getMain().getSpinnerDelete().setEnabled(false);
+		getMain().getSpinnerDelete().setValue(0);
 		getMain().getLabelTotalAdd().setText("0");
 		getMain().getLabelTotalDelete().setText("0");
 		getMain().getBtnSaveChange().setEnabled(false);
 		getISBNSearch().setText("");
-
+		getMain().getCheckBoxDeleteAll().setEnabled(false);
+		getMain().getCheckBoxDeleteAll().setSelected(false);
 	}
 
 	public void actionSaveChange(BookStoreController BookStore) {
@@ -89,6 +94,11 @@ public class ViewController {
 		int delete = (int) getMain().getSpinnerDelete().getValue();
 		BookStore.addUnits(getISBNSearch().getText(), add);
 		BookStore.eraseDrives(getISBNSearch().getText(), delete);
+		if (getMain().getCheckBoxDeleteAll().isSelected()) {
+			int select = DialogBookStore.deleteWarning(getISBNSearch().getText());
+			if (select == 0)
+				BookStore.deleteBook(getISBNSearch().getText());
+		}
 		fillTable(BookStore);
 		DialogBookStore.win();
 		desactivatePanels();
@@ -103,6 +113,7 @@ public class ViewController {
 		getMain().getLabelTotalAdd().setText(String.valueOf(units));
 		getMain().getLabelTotalDelete().setText(String.valueOf(units));
 		getMain().getBtnSaveChange().setEnabled(true);
+		getMain().getCheckBoxDeleteAll().setEnabled(true);
 
 	}
 
@@ -127,11 +138,11 @@ public class ViewController {
 		return getMain().getTextISBNSearchAD();
 	}
 
-	public JTable getTable() {
+	private JTable getTable() {
 		return getMain().getTable();
 	}
 
-	public JTextField getPrice() {
+	private JTextField getPrice() {
 		return getMain().getTextPrice();
 	}
 
@@ -163,17 +174,12 @@ public class ViewController {
 		return getMain().getFormatGroup();
 	}
 
-	public JSpinner getSpinnerUnits() {
+	private JSpinner getSpinnerUnits() {
 		return getMain().getSpinnerUnits();
 	}
 
 	public boolean validateIsbn(String text) {
 		return Validations.ISBNValidation(text);
-	}
-
-	public void deleteBook(BookStoreController bookStore) {
-		bookStore.deleteBook(getISBNSave().getText());
-
 	}
 
 }

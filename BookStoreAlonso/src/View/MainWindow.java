@@ -22,6 +22,7 @@ import java.util.Enumeration;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
@@ -93,11 +94,21 @@ public class MainWindow extends JPanel implements Iview {
 	public JPanel getViewChange() {
 		JPanel panelChangeE = getPanelExport();
 		getPanelResponsivo().add(search);
-		
+
 		panelChangeE.add(panelChange, BorderLayout.CENTER);
 		return panelChangeE;
 	}
-	
+
+	public void changeBtnForEditSave() {
+		getPanelResponsivo().add(getSearch());
+		getPanelResponsivo().remove(getSaveEdit());
+	}
+
+	public void changeBtnForEdit() {
+		getPanelResponsivo().remove(getSearch());
+		getPanelResponsivo().remove(getEdit());
+		getPanelResponsivo().add(getSaveEdit());
+	}
 
 	public JSpinner getSpinnerUnits() {
 		return this.panelBook.getSpinnerUnits();
@@ -207,4 +218,7 @@ public class MainWindow extends JPanel implements Iview {
 		return this.searchEditPanel.getPanelResponsivo();
 	}
 
+	public JCheckBox getCheckBoxDeleteAll() {
+		return panelChange.getCheckBoxDeleteAll();
+	}
 }

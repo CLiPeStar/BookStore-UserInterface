@@ -1,8 +1,10 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.swing.JOptionPane;
 
-public class Book {
+public class Book implements Serializable {
 	private String isbn, title, author, editorial, format, state;
 	private Thematic thematic;
 	private float price = 0f;
@@ -20,15 +22,16 @@ public class Book {
 		this.format = format;
 		this.state = state;
 		this.units = units;
-		this.thematic=thematic;
+		this.thematic = thematic;
 
 	}
 
 	public void changeValueUnitsDelete(int units) {
-		this.units = this.units-units;
+		this.units = this.units - units;
 	}
+
 	public void changeValueUnitsAdd(int units) {
-		this.units = this.units+units;
+		this.units = this.units + units;
 	}
 
 	public int getUnits() {
@@ -62,7 +65,6 @@ public class Book {
 	public String getState() {
 		return state;
 	}
-	
 
 	public Thematic getThematic() {
 		return thematic;

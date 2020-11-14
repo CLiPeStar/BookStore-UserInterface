@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import View.MainWindow;
+import View.RegistrationFieldsView;
 import model.Book;
 import model.Thematic;
 import tools.DialogBookStore;
@@ -27,7 +28,7 @@ public class ViewControllerEditSearch {
 	public void createBookFromFields(BookStoreController BookStore) {
 		BookStore.addBook(getIsbnEdit().getText(), getIsbnEdit().getText(), getTitleEdit().getText(),
 				getAuthorEdit().getText(), getEditorialEdit().getText(), Float.valueOf(getPriceEdit().getText()),
-				getTextBtnSelected(getFormatgroup()), getTextBtnSelected(getStateGroup()),
+				getTextBtnSelected(getFormatgroup(),"Format"), getTextBtnSelected(getStateGroup(),"State"),
 				(int) getSpinnerEdit().getValue(), (Thematic) getThematicEdit().getSelectedItem());
 	}
 
@@ -36,10 +37,11 @@ public class ViewControllerEditSearch {
 	}
 
 	public boolean fieldValidations() {
-		return Validations.letterValidation(getEditorialEdit().getText(),"Editorial")
-				&& Validations.letterValidation(getAuthorEdit().getText(),"Author")
-				&& Validations.IsNamberFloat(getPriceEdit().getText(),"Price") && getTextBtnSelected(getFormatgroup()) != null
-				&& getTextBtnSelected(getStateGroup()) != null && (int) getSpinnerEdit().getValue() > 0;
+		return Validations.letterValidation(getEditorialEdit().getText(), "Editorial")
+				&& Validations.letterValidation(getAuthorEdit().getText(), "Author")
+				&& Validations.IsNamberFloat(getPriceEdit().getText(), "Price")
+				&& getTextBtnSelected(getFormatgroup(),"Format") != null && getTextBtnSelected(getStateGroup(),"State") != null
+				&& (int) getSpinnerEdit().getValue() > 0;
 	}
 
 	public void resetForm() {
@@ -54,18 +56,19 @@ public class ViewControllerEditSearch {
 		getStateGroup().clearSelection();
 	}
 
-	public String getTextBtnSelected(ButtonGroup radiousButtonGroup) {
+	public String getTextBtnSelected(ButtonGroup radiousButtonGroup,String name) {
 		for (Enumeration<AbstractButton> buttons = radiousButtonGroup.getElements(); buttons.hasMoreElements();) {
 			AbstractButton button = buttons.nextElement();
 			if (button.isSelected()) {
 				return button.getText();
 			}
 		}
+		DialogBookStore.errorField(name);
 		return null;
 	}
 
 	public void completeForm(String iSBN, BookStoreController BookStore) {
-		Book bookCompleteForm = BookStore.getValue(iSBN);
+		Book bookCompleteForm = BookStore.searchBook(iSBN);
 		getAuthorEdit().setText(bookCompleteForm.getAuthor());
 		getEditorialEdit().setText(bookCompleteForm.getEditorial());
 		getPriceEdit().setText(String.valueOf(bookCompleteForm.getPrice()));
@@ -79,7 +82,7 @@ public class ViewControllerEditSearch {
 	private void completeRadioButtonForm(ButtonGroup radiousButtonGroup, String nameRadio) {
 		for (Enumeration<AbstractButton> buttons = radiousButtonGroup.getElements(); buttons.hasMoreElements();) {
 			AbstractButton button = buttons.nextElement();
-			if (button.getText() == nameRadio) {
+			if (button.getText().equals(nameRadio)) {
 				button.setSelected(true);
 			}
 		}
@@ -122,28 +125,22 @@ public class ViewControllerEditSearch {
 
 	public void actionBtnEdit(BookStoreController BookStore) {
 		changeForm();
-		getMain().getPanelResponsivo().remove(getMain().getSearch());
-		getMain().getPanelResponsivo().remove(getMain().getEdit());
-		getMain().getPanelResponsivo().add(getMain().getSaveEdit());
+		getMain().changeBtnForEdit();
+		
 		UI.frame.pack();
 	}
 
 	public void actionBtnEditSave(BookStoreController BookStore) {
 		if (fieldValidations()) {
-			System.out.println(getIsbnEdit().getText());
 			BookStore.deleteBook(getIsbnEdit().getText());
 			createBookFromFields(BookStore);
 			DialogBookStore.editWin();
 			changeForm();
 			resetForm();
 			getIsbnEdit().setText("");
-			getMain().getPanelResponsivo().add(getMain().getSearch());
-			getMain().getPanelResponsivo().remove(getMain().getSaveEdit());
+			getMain().changeBtnForEditSave();
 			fillTable(BookStore);
 			UI.frame.pack();
-
-		} else {
-			DialogBookStore.invalidFields();
 		}
 
 	}
@@ -165,27 +162,27 @@ public class ViewControllerEditSearch {
 	}
 
 	private JSpinner getSpinnerEdit() {
-		return getMain().getPanelRegsiterSearchEdit().spinnerUnits();
+		return getFormatSectionSearchEdit().spinnerUnits();
 	}
 
 	private JTextField getTitleEdit() {
-		return getMain().getPanelRegsiterSearchEdit().getTextTitle();
+		return getFormatSectionSearchEdit().getTextTitle();
 	}
 
 	private JTextField getPriceEdit() {
-		return getMain().getPanelRegsiterSearchEdit().getTextPrice();
+		return getFormatSectionSearchEdit().getTextPrice();
 	}
 
 	private JTextField getEditorialEdit() {
-		return getMain().getPanelRegsiterSearchEdit().getTextEditorial();
+		return getFormatSectionSearchEdit().getTextEditorial();
 	}
 
 	private JTextField getAuthorEdit() {
-		return getMain().getPanelRegsiterSearchEdit().getTextAuthor();
+		return getFormatSectionSearchEdit().getTextAuthor();
 	}
 
 	private JTextField getIsbnEdit() {
-		return getMain().getPanelRegsiterSearchEdit().getTextISBN();
+		return getFormatSectionSearchEdit().getTextISBN();
 	}
 
 	public JButton getBtnSave() {
@@ -193,10 +190,14 @@ public class ViewControllerEditSearch {
 	}
 
 	private JComboBox getThematicEdit() {
-		return getMain().getPanelRegsiterSearchEdit().getComboBoxThematic();
+		return getFormatSectionSearchEdit().getComboBoxThematic();
 	}
 
-	public JTable getTable() {
+	private RegistrationFieldsView getFormatSectionSearchEdit() {
+		return getMain().getPanelRegsiterSearchEdit();
+	}
+
+	private JTable getTable() {
 		return getMain().getTable();
 	}
 

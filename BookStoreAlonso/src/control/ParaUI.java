@@ -1,24 +1,16 @@
 package control;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 
 import View.MainWindow;
-import View.UI;
 import model.IparaUI;
 import model.Iview;
 
 public class ParaUI implements IparaUI {
-	public MainWindow main;
-	public JFrame frame;
+	protected MainWindow main;
+	protected JFrame frame;
 
 	public ParaUI(JFrame frame) {
 		super();
@@ -40,7 +32,7 @@ public class ParaUI implements IparaUI {
 		ActionListenerBtnSearchChange(bookStore, viewController);
 		KeyListenerFieldsValidations(viewController, main.getTextISBNRegister());
 		KeyListenerFieldsValidations(viewController, main.getTextISBNSearchAD());
-		KeyListenerFieldsValidations(viewController, main.getTextISBNRegister());
+		KeyListenerFieldsValidations(viewController, main.getPanelRegsiterSearchEdit().getTextISBN());
 		ChangeListenerSpinner(bookStore, viewController, main.getSpinnerAdd());
 		ChangeListenerSpinner(bookStore, viewController, main.getSpinnerDelete());
 		ActionListenerBtnSaveChange(bookStore, viewController);
@@ -49,6 +41,7 @@ public class ParaUI implements IparaUI {
 		ActionListenerBtnEdit(bookStore, viewControllerEditSearch);
 		ActionListenerBtnSave(bookStore, viewControllerEditSearch);
 
+		main.getTable().setModel(bookStore.fillTable());
 	}
 
 	private void ActionListenerBtnSave(BookStoreController bookStore, ViewController viewController) {

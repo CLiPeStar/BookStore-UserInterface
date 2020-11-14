@@ -1,97 +1,122 @@
 package control;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import control.file.Warehouse;
 import model.Book;
 import model.Thematic;
 
 public class BookStoreController {
 
-	private HashMap<String, Book> mapBookStore;
+	private ArrayList<Book> bookStore;
+	private Warehouse wareHouse;
 
 	public BookStoreController() {
 		super();
-		this.mapBookStore = new HashMap<String, Book>();
+		this.wareHouse = new Warehouse("data.libros");
+		readFile();
 	}
 
-	public HashMap<String, Book> getHasBookStore() {
-		return mapBookStore;
+	private void readFile() {
+		try {
+			readWarehouse();
+		} catch (Exception e) {
+		}
+		if (null == this.bookStore) {
+			this.bookStore = new ArrayList<>();
+			saveWarehouse();
+		}
 	}
 
-	public void addBook(String ISBN, String isbn, String title, String author, String editorial, float price,
+	public boolean addBook(String ISBN, String isbn, String title, String author, String editorial, float price,
 			String format, String state, int units, Thematic thematic) {
-		mapBookStore.put(ISBN, new Book(isbn, title, author, editorial, price, format, state, units, thematic));
+		readWarehouse();
+		boolean aniadido = bookStore
+				.add(new Book(isbn, title, author, editorial, price, format, state, units, thematic));
+		if (aniadido) {
+			saveWarehouse();
+		}
+		return aniadido;
 	}
 
-	public void deleteBook(String ISBN) {
-		mapBookStore.remove(ISBN);
+	public boolean deleteBook(String isbn) {
+		readWarehouse();
+		Book deleteBook = giveMeBook(isbn);
+		boolean removido = bookStore.remove(deleteBook);
+		;
+		if (removido) {
+			saveWarehouse();
+		}
+		return removido;
 	}
 
-	public Book searchBook(String ISBN) {
-		if (mapBookStore.containsKey(ISBN)) {
-			return getValue(ISBN);
+	private Book giveMeBook(String isbn) {
+		for (Book book : bookStore) {
+			if (book.getIsbn().equals(isbn))
+				return book;
 		}
 		return null;
 	}
 
-	public HashMap<String, Book> getBooKStore() {
-		return mapBookStore;
+	private void readWarehouse() {
+		this.bookStore = (ArrayList<Book>) wareHouse.recovers();
 	}
 
-	public int getSize() {
-		return mapBookStore.size();
+	public boolean saveWarehouse() {
+		return wareHouse.stores(this.bookStore);
 	}
 
-	public void eraseDrives(String isbnSelected, int i) {
-		getValue(isbnSelected).changeValueUnitsDelete(i);
-
-	}
-
-	public void addUnits(String isbnSelected, int i) {
-		getValue(isbnSelected).changeValueUnitsAdd(i);
-
-	}
-
-	public int checkUnits(String isbnSelected, int selection) {
-		if (getValue(isbnSelected).getUnits() <= selection) {
-			return getValue(isbnSelected).getUnits();
+	public Book searchBook(String isbn) {
+		for (Book book : this.bookStore) {
+			if (book.getIsbn().equals(isbn)) {
+				return book;
+			}
 		}
-		return selection;
+		return null;
 	}
 
-	public Book getValue(String isbnSelected) {
-		return mapBookStore.get(isbnSelected);
+	public boolean libroRepetido(String isbn) {
+		return searchBook(isbn) != null;
+
 	}
 
-	public String getInfoBook(String iSBN) {
-		return searchBook(iSBN).toString();
+	public void addUnits(String isbn, int units) {
+		readWarehouse();
+		searchBook(isbn).changeValueUnitsAdd(units);
+		saveWarehouse();
+
 	}
 
-	public int getBookUnits(String iSBN) {
-		return searchBook(iSBN).getUnits();
+	public void eraseDrives(String isbn, int units) {
+		readWarehouse();
+		searchBook(isbn).changeValueUnitsDelete(units);
+		saveWarehouse();
+	}
+
+	public int getBookUnits(String text) {
+		return searchBook(text).getUnits();
 	}
 
 	public DefaultTableModel fillTable() {
+		saveWarehouse();
 		String columName[] = { "TITLE", "ISBN", "AUTHOR", "EDITORIAL", "FORMAT", "STATE", "PRICE", "UNITS",
 				"Thematic" };
-		String[][] tableRow = new String[getSize()][columName.length];
+		String[][] tableRow = new String[this.bookStore.size()][columName.length];
 		int i = 0;
 
-		for (HashMap.Entry<String, Book> entry : getBooKStore().entrySet()) {
+		for (Book entry : bookStore) {
 
-			tableRow[i][1] = entry.getKey();
-			tableRow[i][0] = entry.getValue().getTitle();
-			tableRow[i][2] = entry.getValue().getAuthor();
-			tableRow[i][3] = entry.getValue().getEditorial();
-			tableRow[i][4] = entry.getValue().getFormat();
-			tableRow[i][5] = entry.getValue().getState();
-			tableRow[i][6] = String.valueOf(entry.getValue().getPrice());
-			tableRow[i][7] = String.valueOf(entry.getValue().getUnits());
-			tableRow[i][8] = entry.getValue().getThematic().name();
+			tableRow[i][1] = entry.getIsbn();
+			tableRow[i][0] = entry.getTitle();
+			tableRow[i][2] = entry.getAuthor();
+			tableRow[i][3] = entry.getEditorial();
+			tableRow[i][4] = entry.getFormat();
+			tableRow[i][5] = entry.getState();
+			tableRow[i][6] = String.valueOf(entry.getPrice());
+			tableRow[i][7] = String.valueOf(entry.getUnits());
+			tableRow[i][8] = entry.getThematic().name();
 			i++;
 		}
 		DefaultTableModel tablaCompleta = new DefaultTableModel(tableRow, columName);
