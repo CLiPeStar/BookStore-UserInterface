@@ -112,12 +112,14 @@ public class ViewControllerEditSearch {
 			completeForm(getIsbnEdit().getText(), BookStore);
 			getMain().getPanelResponsivo().add(getMain().getEdit());
 			UI.frame.pack();
+			UI.frame.repaint();
 		} else {
 
 			DialogBookStore.errorIsbnExist();
 			resetForm();
 			getMain().getPanelResponsivo().remove(getMain().getEdit());
 			UI.frame.pack();
+			UI.frame.repaint();
 
 		}
 
@@ -128,6 +130,7 @@ public class ViewControllerEditSearch {
 		getMain().changeBtnForEdit();
 		
 		UI.frame.pack();
+		UI.frame.repaint();
 	}
 
 	public void actionBtnEditSave(BookStoreController BookStore) {
@@ -141,6 +144,7 @@ public class ViewControllerEditSearch {
 			getMain().changeBtnForEditSave();
 			fillTable(BookStore);
 			UI.frame.pack();
+			UI.frame.repaint();
 		}
 
 	}
