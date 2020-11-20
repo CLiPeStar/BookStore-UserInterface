@@ -15,7 +15,7 @@ public class BookStoreController {
 
 	public BookStoreController() {
 		super();
-		this.wareHouse = new Warehouse();
+		this.wareHouse = new Warehouse("data.libros");
 		readFile();
 	}
 

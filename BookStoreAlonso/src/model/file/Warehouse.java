@@ -19,10 +19,11 @@ public class Warehouse<T> implements Storable<T> {
 	private ObjectInputStream adaptadorR;
 	private ObjectOutputStream adaptadorW;
 	private boolean estado = false;
-	private final String PATH = "data.libros";
+	private final String PATH ;
 
-	public Warehouse() {
+	public Warehouse(String path) {
 		super();
+		this.PATH=path;
 		createFile();
 	}
 

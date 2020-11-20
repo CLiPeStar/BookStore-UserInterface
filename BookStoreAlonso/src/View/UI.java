@@ -103,30 +103,35 @@ public class UI extends JFrame {
 		menuBar.add(mnNewMenu);
 
 		JMenuItem menuBtnSave = new JMenuItem("Save Book");
+		menuBtnSave.setIcon(new ImageIcon(UI.class.getResource("/assets/add-file.png")));
 		menuBtnSave.setBackground(new Color(66,166,255));
 		menuBtnSave.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnSave);
 		menuBtnSave.addActionListener(changePanel("PanelBook"));
 
 		JMenuItem menuBtnSearchEdit = new JMenuItem("Search/Edit Book");
+		menuBtnSearchEdit.setIcon(new ImageIcon(UI.class.getResource("/assets/ciclo-par-de-flechas-lineas-dibujadas-a-mano.png")));
 		menuBtnSearchEdit.setBackground(new Color(66,166,255));
 		menuBtnSearchEdit.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnSearchEdit);
 		menuBtnSearchEdit.addActionListener(changePanel("PanelBookSearchEdit"));
 
 		JMenuItem menuBtnDeleteBook = new JMenuItem("Add/Delete Book");
+		menuBtnDeleteBook.setIcon(new ImageIcon(UI.class.getResource("/assets/signos-matematicos-basicos-de-mas-y-menos-con-una-barra.png")));
 		menuBtnDeleteBook.setBackground(new Color(66,166,255));
 		menuBtnDeleteBook.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnDeleteBook);
 		menuBtnDeleteBook.addActionListener(changePanel("PanelBookChange"));
 
 		JMenuItem menuBtnLibrary = new JMenuItem("Library");
+		menuBtnLibrary.setIcon(new ImageIcon(UI.class.getResource("/assets/documento-con-tablas.png")));
 		menuBtnLibrary.setBackground(new Color(66,166,255));
 		menuBtnLibrary.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnLibrary);
 		menuBtnLibrary.addActionListener(changePanel("PanelTable"));
 
 		JMenuItem menuBtnExit = new JMenuItem("EXIT");
+		menuBtnExit.setIcon(new ImageIcon(UI.class.getResource("/assets/salir-simbolo-de-interfaz-dibujado-a-mano.png")));
 		menuBtnExit.setBackground(new Color(66,166,255));
 		menuBtnExit.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnExit);
