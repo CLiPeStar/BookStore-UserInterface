@@ -38,10 +38,6 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 public class UI extends JFrame {
 
 	private JPanel contentPane;
-//	private JPanel panelBookSave;
-//	private JPanel panelTable;
-//	private JPanel panelBookSearchEdit;
-//	private JPanel panelBookChange;
 
 	/**
 	 * Create the frame.
@@ -52,7 +48,7 @@ public class UI extends JFrame {
 		setBounds(100, 100, 971, 797);
 		contentPane = new JPanel();
 		setResizable(false);
-		contentPane.setBackground(new Color(246, 142, 69));
+		contentPane.setBackground(new Color(143,88,0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setTitle("BookStore Alonso");
@@ -66,7 +62,7 @@ public class UI extends JFrame {
 		contentPane.add(basicPanel);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 218, 185));
+		panel.setBackground(new Color(230,156, 35));
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(UI.class.getResource("/assets/galleta.png logo.png")));
@@ -98,33 +94,40 @@ public class UI extends JFrame {
 //		
 
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(72,151,219));
 		setJMenuBar(menuBar);
 
 		JMenu mnNewMenu = new JMenu("Acctions");
+		mnNewMenu.setBackground(new Color(66,166,255));
 		mnNewMenu.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		menuBar.add(mnNewMenu);
 
 		JMenuItem menuBtnSave = new JMenuItem("Save Book");
+		menuBtnSave.setBackground(new Color(66,166,255));
 		menuBtnSave.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnSave);
 		menuBtnSave.addActionListener(changePanel("PanelBook"));
 
 		JMenuItem menuBtnSearchEdit = new JMenuItem("Search/Edit Book");
+		menuBtnSearchEdit.setBackground(new Color(66,166,255));
 		menuBtnSearchEdit.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnSearchEdit);
 		menuBtnSearchEdit.addActionListener(changePanel("PanelBookSearchEdit"));
 
 		JMenuItem menuBtnDeleteBook = new JMenuItem("Add/Delete Book");
+		menuBtnDeleteBook.setBackground(new Color(66,166,255));
 		menuBtnDeleteBook.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnDeleteBook);
 		menuBtnDeleteBook.addActionListener(changePanel("PanelBookChange"));
 
 		JMenuItem menuBtnLibrary = new JMenuItem("Library");
+		menuBtnLibrary.setBackground(new Color(66,166,255));
 		menuBtnLibrary.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnLibrary);
 		menuBtnLibrary.addActionListener(changePanel("PanelTable"));
 
 		JMenuItem menuBtnExit = new JMenuItem("EXIT");
+		menuBtnExit.setBackground(new Color(66,166,255));
 		menuBtnExit.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		mnNewMenu.add(menuBtnExit);
 		menuBtnExit.addActionListener(new ActionListener() {

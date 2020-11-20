@@ -17,20 +17,19 @@ public class StateView extends JPanel {
 	 * Create the panel.
 	 */
 	public StateView() {
-		setBackground(new Color(250, 240, 230));
-		setForeground(new Color(250, 240, 230));
-		setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(0, 0, 0)),
-				"State", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		setBackground(new Color(72,151,219));
+		setForeground(new Color(72,151,219));
+		setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.RAISED, new Color(255, 255, 255), new Color(0, 0, 0)), "State", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		setLayout(new GridLayout(2, 1, 0, 0));
 
 		JRadioButton rdbtnReissue = new JRadioButton("Reissue");
-		rdbtnReissue.setBackground(new Color(250, 240, 230));
+		rdbtnReissue.setBackground(new Color(72,151,219));
 		rdbtnReissue.setHorizontalAlignment(SwingConstants.CENTER);
 		rdbtnReissue.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		add(rdbtnReissue);
 
 		JRadioButton rdbtnNovelty = new JRadioButton("Novelty");
-		rdbtnNovelty.setBackground(new Color(250, 240, 230));
+		rdbtnNovelty.setBackground(new Color(72,151,219));
 		rdbtnNovelty.setHorizontalAlignment(SwingConstants.CENTER);
 		rdbtnNovelty.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		add(rdbtnNovelty);

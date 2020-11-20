@@ -25,7 +25,7 @@ public class PanelSearchEdit extends JPanel {
 		setLayout(new BorderLayout(0, 0));
 
 		JPanel mainPanel = new JPanel();
-		mainPanel.setBackground(new Color(244, 164, 96));
+		mainPanel.setBackground(new Color(33,91,143));
 		add(mainPanel, BorderLayout.CENTER);
 
 		JPanel panelRegister = new JPanel();
@@ -43,12 +43,12 @@ public class PanelSearchEdit extends JPanel {
 		panelState.add(stateSection);
 
 		JPanel panelFormat = new JPanel();
-		panelFormat.setBackground(new Color(255, 218, 185));
+		panelFormat.setBackground(new Color(72,151,219));
 		panelFormat.setLayout(new BorderLayout(0, 0));
 		panelFormat.add(formatSection);
 
 		PanelResponsivo = new JPanel();
-		PanelResponsivo.setBackground(new Color(244, 164, 96));
+		PanelResponsivo.setBackground(new Color(72,151,219));
 		GroupLayout gl_mainPanel = new GroupLayout(mainPanel);
 		gl_mainPanel.setHorizontalGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_mainPanel.createSequentialGroup().addContainerGap()

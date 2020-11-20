@@ -21,7 +21,7 @@ public class jPanelTable extends JPanel {
 	 * Create the panel.
 	 */
 	public jPanelTable() {
-		setBackground(new Color(250, 240, 230));
+		setBackground(new Color(219,163,72));
 		setLayout(new GridLayout(1, 0, 0, 0));
 
 		JScrollPane scrollPane = new JScrollPane();

@@ -37,7 +37,7 @@ public class PanelAddDelete extends JPanel {
 		setLayout(new BorderLayout(0, 0));
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 222, 173));
+		panel.setBackground(new Color(33,91,143));
 		add(panel, BorderLayout.CENTER);
 
 		JLabel lblIsbn = new JLabel("ISBN:");
@@ -48,15 +48,15 @@ public class PanelAddDelete extends JPanel {
 		textFieldIsbnSearch.setColumns(10);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 218, 185));
+		panel_1.setBackground(new Color(72,151,219));
 		panel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
 		JPanel PanelBtn = new JPanel();
-		PanelBtn.setBackground(new Color(250, 240, 230));
+		PanelBtn.setBackground(new Color(72,151,219));
 
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panel_1_1.setBackground(new Color(255, 218, 185));
+		panel_1_1.setBackground(new Color(72,151,219));
 
 		JLabel lblTotalUnits_1 = new JLabel("Total Units:");
 		lblTotalUnits_1.setForeground(Color.GRAY);
@@ -90,7 +90,7 @@ public class PanelAddDelete extends JPanel {
 		CheckBoxDeleteAll = new JCheckBox("Delete all book");
 		CheckBoxDeleteAll.setEnabled(false);
 		CheckBoxDeleteAll.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		CheckBoxDeleteAll.setBackground(new Color(255, 218, 185));
+		CheckBoxDeleteAll.setBackground(new Color(72,151,219));
 		GroupLayout gl_panel_1_1 = new GroupLayout(panel_1_1);
 		gl_panel_1_1.setHorizontalGroup(gl_panel_1_1.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_1_1.createSequentialGroup().addContainerGap(140, Short.MAX_VALUE)

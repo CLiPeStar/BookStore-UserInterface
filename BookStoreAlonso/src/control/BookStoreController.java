@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
 
-import control.file.Warehouse;
 import model.Book;
 import model.Thematic;
+import model.file.Warehouse;
 
 public class BookStoreController {
 
@@ -15,7 +15,7 @@ public class BookStoreController {
 
 	public BookStoreController() {
 		super();
-		this.wareHouse = new Warehouse("data.libros");
+		this.wareHouse = new Warehouse();
 		readFile();
 	}
 
@@ -25,30 +25,24 @@ public class BookStoreController {
 		} catch (Exception e) {
 		}
 		if (null == this.bookStore) {
-			this.bookStore = new ArrayList<>();
-			saveWarehouse();
+			this.bookStore = new ArrayList<Book>();
 		}
 	}
 
 	public boolean addBook(String ISBN, String isbn, String title, String author, String editorial, float price,
 			String format, String state, int units, Thematic thematic) {
+		Book book = new Book(isbn, title, author, editorial, price, format, state, units, thematic);
 		readWarehouse();
-		boolean aniadido = bookStore
-				.add(new Book(isbn, title, author, editorial, price, format, state, units, thematic));
-		if (aniadido) {
-			saveWarehouse();
-		}
-		return aniadido;
+		bookStore.add(book);
+		saveWarehouse(book);
+		return true;
 	}
 
 	public boolean deleteBook(String isbn) {
 		readWarehouse();
 		Book deleteBook = giveMeBook(isbn);
 		boolean removido = bookStore.remove(deleteBook);
-		;
-		if (removido) {
-			saveWarehouse();
-		}
+		wareHouse.deleteObject(isbn);
 		return removido;
 	}
 
@@ -64,8 +58,8 @@ public class BookStoreController {
 		this.bookStore = (ArrayList<Book>) wareHouse.recovers();
 	}
 
-	public boolean saveWarehouse() {
-		return wareHouse.stores(this.bookStore);
+	public boolean saveWarehouse(Book book) {
+		return wareHouse.stores(book);
 	}
 
 	public Book searchBook(String isbn) {
@@ -85,14 +79,14 @@ public class BookStoreController {
 	public void addUnits(String isbn, int units) {
 		readWarehouse();
 		searchBook(isbn).changeValueUnitsAdd(units);
-		saveWarehouse();
+		saveWarehouse(searchBook(isbn));
 
 	}
 
 	public void eraseDrives(String isbn, int units) {
 		readWarehouse();
 		searchBook(isbn).changeValueUnitsDelete(units);
-		saveWarehouse();
+		saveWarehouse(searchBook(isbn));
 	}
 
 	public int getBookUnits(String text) {
@@ -100,7 +94,7 @@ public class BookStoreController {
 	}
 
 	public DefaultTableModel fillTable() {
-		saveWarehouse();
+		readWarehouse();
 		String columName[] = { "TITLE", "ISBN", "AUTHOR", "EDITORIAL", "FORMAT", "STATE", "PRICE", "UNITS",
 				"Thematic" };
 		String[][] tableRow = new String[this.bookStore.size()][columName.length];

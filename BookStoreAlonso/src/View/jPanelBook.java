@@ -26,7 +26,7 @@ public class jPanelBook extends JPanel {
 	 * Create the panel.
 	 */
 	public jPanelBook() {
-		setBackground(new Color(255, 222, 173));
+		setBackground(new Color(33,91,143));
 
 		JPanel panelFields = new JPanel();
 		registerFieldsPanel = new RegistrationFieldsView();
@@ -34,13 +34,13 @@ public class jPanelBook extends JPanel {
 
 		JPanel panelLogo = new JPanel();
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBackground(new Color(250, 240, 230));
+		lblNewLabel.setBackground(new Color(33,91,143));
 		panelLogo.add(lblNewLabel);
-		panelLogo.setBackground(new Color(250, 240, 230));
-		lblNewLabel.setIcon(new ImageIcon(jPanelBook.class.getResource("/assets/bookS.png")));
+		panelLogo.setBackground(new Color(33,91,143));
+		lblNewLabel.setIcon(new ImageIcon(jPanelBook.class.getResource("/assets/icono.png")));
 
 		JPanel panelState = new JPanel();
-		panelState.setBackground(new Color(255, 222, 173));
+		panelState.setBackground(new Color(33,91,143));
 		state = new StateView();
 		panelState.add(state);
 

@@ -43,21 +43,21 @@ public class MainWindow extends JPanel implements Iview {
 	}
 
 	public JPanel getPanelExport() {
-		setBackground(new Color(246, 142, 69));
+		setBackground(new Color(33,91,143));
 		setLayout(new BorderLayout(0, 0));
 
 		JPanel PanelExport = new JPanel();
-		PanelExport.setBackground(new Color(244, 164, 96));
+		PanelExport.setBackground(new Color(33,91,143));
 		add(PanelExport, BorderLayout.CENTER);
 		PanelExport.setLayout(new BorderLayout(0, 0));
 
 		JPanel headPanel = new JPanel();
-		headPanel.setBackground(new Color(255, 123, 120));
+		headPanel.setBackground(new Color(219,163,72));
 		PanelExport.add(headPanel, BorderLayout.NORTH);
 		headPanel.setLayout(new GridLayout(1, 0, 0, 0));
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(244, 164, 96));
+		panel.setBackground(new Color(219,163,72));
 		headPanel.add(panel);
 
 		JLabel lblTitle = new JLabel("BookStore");

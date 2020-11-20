@@ -31,7 +31,7 @@ public class RegistrationFieldsView extends JPanel {
 	 * Create the panel.
 	 */
 	public RegistrationFieldsView() {
-		setBackground(new Color(250, 240, 230));
+		setBackground(new Color(72,151,219));
 		JLabel lblIsbn = new JLabel("ISBN:");
 		lblIsbn.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
