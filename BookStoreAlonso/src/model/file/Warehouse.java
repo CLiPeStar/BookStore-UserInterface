@@ -51,12 +51,14 @@ public class Warehouse<T> implements Storable<T> {
 			adaptadorW.writeObject((T) obj);
 		} catch (IOException e) {
 			estado = false;
+			e.printStackTrace();
 		}
 		try {
 			adaptadorW.close();
 			flujoW.close();
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			// TODO: handle exception
 		}
 		return estado;
@@ -74,12 +76,14 @@ public class Warehouse<T> implements Storable<T> {
 			adaptadorW.writeObject((T) obj);
 		} catch (IOException e) {
 			estado = false;
+			e.printStackTrace();
 		}
 		try {
 			adaptadorW.close();
 			flujoW.close();
 
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return estado;
 	}
@@ -90,11 +94,11 @@ public class Warehouse<T> implements Storable<T> {
 			flujoR = new FileInputStream(file);
 			adaptadorR = new ObjectInputStream(flujoR);
 			T object = (T) adaptadorR.readObject();
-			do {
-
+			while (object != null) {
 				books.add((T) object);
 				object = (T) adaptadorR.readObject();
-			} while (object != null);
+
+			}
 		} catch (IOException | ClassNotFoundException e) {
 			estado = false;
 		}
@@ -103,6 +107,7 @@ public class Warehouse<T> implements Storable<T> {
 			flujoR.close();
 
 		} catch (Exception e) {
+//			e.printStackTrace();
 		}
 		return books;
 	}
@@ -114,8 +119,8 @@ public class Warehouse<T> implements Storable<T> {
 			Book t = (Book) iterator.next();
 			if (!t.getIsbn().equals(isbn)) {
 				stores((T) t, clear);
+				clear = true;
 			}
-			clear = true;
 		}
 		return false;
 	}

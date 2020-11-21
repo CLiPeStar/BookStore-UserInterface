@@ -78,16 +78,22 @@ public class BookStoreController {
 
 	public void addUnits(String isbn, int units) {
 		readWarehouse();
+		
 		searchBook(isbn).changeValueUnitsAdd(units);
-		saveWarehouse(searchBook(isbn));
+		Book bookTemporal=searchBook(isbn);
+		deleteBook(isbn);
+		bookStore.add(bookTemporal);
+		saveWarehouse(bookTemporal);
 
 	}
 
 	public void eraseDrives(String isbn, int units) {
 		readWarehouse();
 		searchBook(isbn).changeValueUnitsDelete(units);
-		saveWarehouse(searchBook(isbn));
-	}
+		Book bookTemporal=searchBook(isbn);
+		deleteBook(isbn);
+		bookStore.add(bookTemporal);
+		saveWarehouse(bookTemporal);	}
 
 	public int getBookUnits(String text) {
 		return searchBook(text).getUnits();

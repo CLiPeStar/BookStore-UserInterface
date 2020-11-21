@@ -59,7 +59,7 @@ public class PanelAddDelete extends JPanel {
 		panel_1_1.setBackground(new Color(72,151,219));
 
 		JLabel lblTotalUnits_1 = new JLabel("Total Units:");
-		lblTotalUnits_1.setForeground(Color.GRAY);
+		lblTotalUnits_1.setForeground(Color.DARK_GRAY);
 		lblTotalUnits_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTotalUnits_1.setBackground(Color.GRAY);
 
@@ -67,7 +67,7 @@ public class PanelAddDelete extends JPanel {
 		labelTotalDelete.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		JLabel lblUnit_1 = new JLabel("Current Units:");
-		lblUnit_1.setForeground(Color.GRAY);
+		lblUnit_1.setForeground(Color.DARK_GRAY);
 		lblUnit_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblUnit_1.setBackground(Color.GRAY);
 
@@ -75,7 +75,7 @@ public class PanelAddDelete extends JPanel {
 		lblAdd_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		JLabel lblUnitsToDelete = new JLabel("Units to Delete:");
-		lblUnitsToDelete.setForeground(Color.GRAY);
+		lblUnitsToDelete.setForeground(Color.DARK_GRAY);
 		lblUnitsToDelete.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblUnitsToDelete.setBackground(Color.GRAY);
 
@@ -189,8 +189,8 @@ public class PanelAddDelete extends JPanel {
 		lblAdd.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		JLabel lblUnit = new JLabel("Current Units:");
-		lblUnit.setForeground(Color.GRAY);
-		lblUnit.setBackground(Color.GRAY);
+		lblUnit.setForeground(Color.DARK_GRAY);
+		lblUnit.setBackground(Color.DARK_GRAY);
 		lblUnit.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		spinnerAdd = new JSpinner();
@@ -202,14 +202,14 @@ public class PanelAddDelete extends JPanel {
 		labelUnitsAdd.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
 		JLabel lblActualUnits = new JLabel("Units to Add:");
-		lblActualUnits.setForeground(Color.GRAY);
+		lblActualUnits.setForeground(Color.DARK_GRAY);
 		lblActualUnits.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblActualUnits.setBackground(Color.GRAY);
+		lblActualUnits.setBackground(Color.DARK_GRAY);
 
 		JLabel lblTotalUnits = new JLabel("Total Units:");
-		lblTotalUnits.setForeground(Color.GRAY);
+		lblTotalUnits.setForeground(Color.DARK_GRAY);
 		lblTotalUnits.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTotalUnits.setBackground(Color.GRAY);
+		lblTotalUnits.setBackground(Color.DARK_GRAY);
 
 		labelTotalAdd = new JLabel("0");
 		labelTotalAdd.setFont(new Font("Tahoma", Font.PLAIN, 20));
