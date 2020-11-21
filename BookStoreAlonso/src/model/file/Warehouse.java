@@ -19,11 +19,11 @@ public class Warehouse<T> implements Storable<T> {
 	private ObjectInputStream adaptadorR;
 	private ObjectOutputStream adaptadorW;
 	private boolean estado = false;
-	private final String PATH ;
+	private final String PATH;
 
 	public Warehouse(String path) {
 		super();
-		this.PATH=path;
+		this.PATH = path;
 		createFile();
 	}
 
@@ -112,7 +112,9 @@ public class Warehouse<T> implements Storable<T> {
 		boolean clear = false;
 		for (Iterator<Book> iterator = books.iterator(); iterator.hasNext();) {
 			Book t = (Book) iterator.next();
-			stores((T) t, clear);
+			if (!t.getIsbn().equals(isbn)) {
+				stores((T) t, clear);
+			}
 			clear = true;
 		}
 		return false;
