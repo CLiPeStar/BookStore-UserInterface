@@ -42,7 +42,7 @@ public class BookStoreController {
 		readWarehouse();
 		Book deleteBook = giveMeBook(isbn);
 		boolean removido = bookStore.remove(deleteBook);
-		wareHouse.deleteObject(isbn);
+		wareHouse.deleteObject(bookStore);
 		return removido;
 	}
 

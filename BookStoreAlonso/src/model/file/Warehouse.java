@@ -64,30 +64,6 @@ public class Warehouse<T> implements Storable<T> {
 		return estado;
 	}
 
-	private boolean stores(T obj, boolean sobreescribir) {
-		try {
-			flujoW = new FileOutputStream(file, sobreescribir);
-			if (this.file.length() == 0 || !this.file.exists()) {
-				createFile();
-				adaptadorW = new ObjectOutputStream(flujoW);
-			} else {
-				adaptadorW = new MyObjectOutputStream(flujoW);
-			}
-			adaptadorW.writeObject((T) obj);
-		} catch (IOException e) {
-			estado = false;
-			e.printStackTrace();
-		}
-		try {
-			adaptadorW.close();
-			flujoW.close();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return estado;
-	}
-
 	public ArrayList<T> recovers() {
 		ArrayList<T> books = new ArrayList<T>();
 		try {
@@ -112,17 +88,24 @@ public class Warehouse<T> implements Storable<T> {
 		return books;
 	}
 
-	public boolean deleteObject(String isbn) throws SecurityException {
-		ArrayList<Book> books = (ArrayList<Book>) recovers();
-		boolean clear = false;
+	public boolean deleteObject(Object bookStore) throws SecurityException {
+		ArrayList<Book> books = (ArrayList<Book>) bookStore;
+		borrarFichero();
 		for (Iterator<Book> iterator = books.iterator(); iterator.hasNext();) {
 			Book t = (Book) iterator.next();
-			if (!t.getIsbn().equals(isbn)) {
-				stores((T) t, clear);
-				clear = true;
-			}
+			stores((T) t);
 		}
 		return false;
+	}
+
+	private void borrarFichero() {
+		try {
+			file.delete();
+			file.createNewFile();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
