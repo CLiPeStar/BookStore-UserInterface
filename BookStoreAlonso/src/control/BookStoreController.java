@@ -1,9 +1,11 @@
 package control;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
 
+import control.BBDD.CallerBooks;
 import model.Book;
 import model.Thematic;
 import model.file.Warehouse;
@@ -11,11 +13,19 @@ import model.file.Warehouse;
 public class BookStoreController {
 
 	private ArrayList<Book> bookStore;
-	private Warehouse wareHouse;
+	private CallerBooks caller;
 
 	public BookStoreController() {
 		super();
-		this.wareHouse = new Warehouse("data.libros");
+		try {
+			this.caller= new CallerBooks();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		readFile();
 	}
 
@@ -59,7 +69,13 @@ public class BookStoreController {
 	}
 
 	public boolean saveWarehouse(Book book) {
-		return wareHouse.stores(book);
+		try {
+			return caller.insertBook(book);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 	public Book searchBook(String isbn) {
@@ -78,9 +94,9 @@ public class BookStoreController {
 
 	public void addUnits(String isbn, int units) {
 		readWarehouse();
-		
+
 		searchBook(isbn).changeValueUnitsAdd(units);
-		Book bookTemporal=searchBook(isbn);
+		Book bookTemporal = searchBook(isbn);
 		deleteBook(isbn);
 		bookStore.add(bookTemporal);
 		saveWarehouse(bookTemporal);
@@ -90,10 +106,11 @@ public class BookStoreController {
 	public void eraseDrives(String isbn, int units) {
 		readWarehouse();
 		searchBook(isbn).changeValueUnitsDelete(units);
-		Book bookTemporal=searchBook(isbn);
+		Book bookTemporal = searchBook(isbn);
 		deleteBook(isbn);
 		bookStore.add(bookTemporal);
-		saveWarehouse(bookTemporal);	}
+		saveWarehouse(bookTemporal);
+	}
 
 	public int getBookUnits(String text) {
 		return searchBook(text).getUnits();
