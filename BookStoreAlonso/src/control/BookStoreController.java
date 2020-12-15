@@ -8,7 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import control.BBDD.CallerBooks;
 import model.Book;
 import model.Thematic;
-import model.file.Warehouse;
 
 public class BookStoreController {
 
@@ -18,25 +17,11 @@ public class BookStoreController {
 	public BookStoreController() {
 		super();
 		try {
-			this.caller= new CallerBooks();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			this.caller = new CallerBooks();
+		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		readFile();
-	}
-
-	private void readFile() {
-		try {
-			readWarehouse();
-		} catch (Exception e) {
-		}
-		if (null == this.bookStore) {
-			this.bookStore = new ArrayList<Book>();
-		}
+		bookStore = new ArrayList<Book>();
 	}
 
 	public boolean addBook(String ISBN, String isbn, String title, String author, String editorial, float price,
@@ -44,16 +29,28 @@ public class BookStoreController {
 		Book book = new Book(isbn, title, author, editorial, price, format, state, units, thematic);
 		readWarehouse();
 		bookStore.add(book);
-		saveWarehouse(book);
+		saveBook(book);
 		return true;
+	}
+
+	private void saveBook(Book book) {
+		try {
+			caller.insertBook(book);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean deleteBook(String isbn) {
 		readWarehouse();
-		Book deleteBook = giveMeBook(isbn);
-		boolean removido = bookStore.remove(deleteBook);
-		wareHouse.deleteObject(bookStore);
-		return removido;
+		try {
+			caller.deleteBook(isbn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		readWarehouse();
+		return true;
 	}
 
 	private Book giveMeBook(String isbn) {
@@ -65,17 +62,8 @@ public class BookStoreController {
 	}
 
 	private void readWarehouse() {
-		this.bookStore = (ArrayList<Book>) wareHouse.recovers();
-	}
+		bookStore = caller.selectBook();
 
-	public boolean saveWarehouse(Book book) {
-		try {
-			return caller.insertBook(book);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
 	}
 
 	public Book searchBook(String isbn) {
@@ -96,20 +84,22 @@ public class BookStoreController {
 		readWarehouse();
 
 		searchBook(isbn).changeValueUnitsAdd(units);
-		Book bookTemporal = searchBook(isbn);
-		deleteBook(isbn);
-		bookStore.add(bookTemporal);
-		saveWarehouse(bookTemporal);
+		try {
+			caller.updateBook(searchBook(isbn));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
 	public void eraseDrives(String isbn, int units) {
 		readWarehouse();
 		searchBook(isbn).changeValueUnitsDelete(units);
-		Book bookTemporal = searchBook(isbn);
-		deleteBook(isbn);
-		bookStore.add(bookTemporal);
-		saveWarehouse(bookTemporal);
+		try {
+			caller.updateBook(searchBook(isbn));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public int getBookUnits(String text) {

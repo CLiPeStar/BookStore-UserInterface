@@ -36,7 +36,7 @@ public class PanelSearchEdit extends JPanel {
 		register.getTextPrice().setEnabled(false);
 		register.getTxtUnits().setEnabled(false);
 		register.getComboBoxThematic().setEnabled(false);
-		panelRegister.add(register);
+		panelRegister.add(register, BorderLayout.CENTER);
 
 		JPanel panelState = new JPanel();
 		panelState.setLayout(new BorderLayout(0, 0));
@@ -50,28 +50,32 @@ public class PanelSearchEdit extends JPanel {
 		PanelResponsivo = new JPanel();
 		PanelResponsivo.setBackground(new Color(72,151,219));
 		GroupLayout gl_mainPanel = new GroupLayout(mainPanel);
-		gl_mainPanel.setHorizontalGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_mainPanel.createSequentialGroup().addContainerGap()
-						.addGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
-								.addComponent(panelFormat, GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
-								.addGroup(gl_mainPanel.createSequentialGroup()
-										.addComponent(panelRegister, GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(panelState, GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
-								.addComponent(PanelResponsivo, GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE))
-						.addContainerGap()));
-		gl_mainPanel.setVerticalGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_mainPanel.createSequentialGroup().addContainerGap()
-						.addGroup(gl_mainPanel.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(panelState, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(panelRegister, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 441,
-										Short.MAX_VALUE))
-						.addGap(18)
-						.addComponent(panelFormat, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(PanelResponsivo, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(46, Short.MAX_VALUE)));
+		gl_mainPanel.setHorizontalGroup(
+			gl_mainPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_mainPanel.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
+						.addComponent(panelFormat, GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+						.addGroup(gl_mainPanel.createSequentialGroup()
+							.addComponent(panelRegister, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panelState, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(PanelResponsivo, GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		gl_mainPanel.setVerticalGroup(
+			gl_mainPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_mainPanel.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
+						.addComponent(panelState, GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
+						.addComponent(panelRegister, GroupLayout.PREFERRED_SIZE, 453, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panelFormat, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(PanelResponsivo, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+					.addGap(0))
+		);
 		PanelResponsivo.setLayout(new GridLayout(1, 0, 0, 0));
 		mainPanel.setLayout(gl_mainPanel);
 

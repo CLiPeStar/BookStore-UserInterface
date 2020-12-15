@@ -1,7 +1,9 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Enumeration;
 
+import javax.swing.AbstractButton;
 import javax.swing.JOptionPane;
 
 public class Book implements Serializable {
@@ -74,7 +76,26 @@ public class Book implements Serializable {
 	public String toString() {
 
 		return "ISBN : " + this.isbn + "\nTitle : " + this.title + "\nAuthor : " + this.author + "\nEditorial : "
-				+ this.editorial + "\nPrice : " + this.price + "€" + "\nFormat : " + this.format + "\nState : "
+				+ this.editorial + "\nPrice : " + this.price + "â‚¬" + "\nFormat : " + this.format + "\nState : "
 				+ this.state + "\nUnits : " + this.units;
+	}
+
+	public int getStateId() {
+		for (State state : State.values()) {
+			if (state.getName().equals(this.state)) {
+				return state.getId();
+				
+			}
+		}
+		return 0;
+	}
+
+	public int getFormatId() {
+		for (Formats format : Formats.values()) {
+			if (format.getName().equals(this.format)) {
+				return format.getId();
+			}
+		}
+		return 0;
 	}
 }

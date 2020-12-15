@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import View.UI;
 
-public class Main{
+public class Main {
 	/**
 	 * Launch the application.
 	 */
