@@ -43,12 +43,7 @@ public class BookStoreController {
 
 	public boolean deleteBook(String isbn) {
 		readWarehouse();
-		try {
 			caller.deleteBook(isbn);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
 		readWarehouse();
 		return true;
 	}

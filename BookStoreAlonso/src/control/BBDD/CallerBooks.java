@@ -1,6 +1,7 @@
 package control.BBDD;
 
 import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,6 +13,7 @@ import model.Formats;
 import model.State;
 import model.Thematic;
 import model.BBDD.BbddBookStoreAccess;
+import model.BBDD.Operationable;
 
 public class CallerBooks extends BbddBookStoreAccess implements Operationable {
 
@@ -37,17 +39,21 @@ public class CallerBooks extends BbddBookStoreAccess implements Operationable {
 	}
 
 	@Override
-	public boolean deleteBook(String isbn) throws SQLException {
-		CallableStatement cstmt = (CallableStatement) connection.prepareCall("{call DeleteBook(?, ?)}");
-		cstmt.setString(1, isbn);
-		cstmt.registerOutParameter(2, Types.BOOLEAN);
-		cstmt.execute();
-		return cstmt.getBoolean(2);
+	public boolean deleteBook(String isbn) {
+		try (PreparedStatement miSentencia = connection.prepareStatement("DELETE FROM `libro` WHERE `isbn` =?")) {
+			miSentencia.setString(1, isbn);
+			miSentencia.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return true;
 	}
 
 	@Override
 	public ArrayList<Book> selectBook() {
 		ArrayList<Book> books = new ArrayList<Book>();
+		
 		try (Statement miStatement = connection.createStatement();
 				ResultSet miResulSet = miStatement.executeQuery("SELECT * FROM libro");) {
 
