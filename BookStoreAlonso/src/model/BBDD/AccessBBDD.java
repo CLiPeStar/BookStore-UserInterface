@@ -36,4 +36,17 @@ public class AccessBBDD {
 	public Connection getConnection() {
 	    return connection;
 	  }
+
+	public String getUser() {
+		return user;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getURL() {
+		return URL;
+	}
+	
 }
